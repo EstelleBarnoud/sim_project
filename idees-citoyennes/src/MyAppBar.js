@@ -35,10 +35,7 @@ const Logged = (props) => (
 
 Logged.muiName = 'IconMenu';
 
-/**
- * This example is taking advantage of the composability of the `AppBar`
- * to render different components depending on the application state.
- */
+
 class MyAppBar extends Component {
   state = {
     logged: true,
