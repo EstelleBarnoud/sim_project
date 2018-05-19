@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Enonce extends React.Component
+class Description extends React.Component
 {
     render(){
         return(
@@ -12,4 +12,4 @@ class Enonce extends React.Component
     }
 }
 
-export default Enonce;
+export default Description;
