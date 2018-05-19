@@ -5,6 +5,7 @@ import MyAppBar from './MyAppBar';
 import Title from './Title';
 import Description from './Description';
 import Progress from './Progress';
+import ReactionBar from './ReactionBar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
             <Title />
             <Description />
             <Progress />
+            <ReactionBar />
           </div>
         </div>
       </ MuiThemeProvider>
