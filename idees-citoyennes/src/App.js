@@ -22,16 +22,19 @@ class App extends Component {
           <div className="App">
             <Nav />
             <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
-              <Paper zDepth={2} style={{padding: 50}}>
-                <Title />
-                <Divider />
-                <Description />
-                <Divider />
-                <Progress />
-                <Divider />
-                <ReactionBar />
-                <Divider />
-                <Reactions />
+              <Paper zDepth={2} >
+                <img src={ require('./ravi-roshan-383162-unsplash.jpg') } />
+                <div style={{padding: 50}}>
+                  <Title />
+                  <Divider />
+                  <Description />
+                  <Divider />
+                  <Progress />
+                  <Divider />
+                  <ReactionBar />
+                  <Divider />
+                  <Reactions />
+                </div>
               </Paper>
             </div>
             <div>
