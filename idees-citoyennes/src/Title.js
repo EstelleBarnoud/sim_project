@@ -1,11 +1,13 @@
 import React from 'react';
+import Chips from './Chips';
 
 class Title extends React.Component
 {
     render(){
         return(
                 <div>
-                    <h2>Projet</h2>
+                    <h1>Projet</h1>
+                    <Chips />
                 </div>
               );
     }
