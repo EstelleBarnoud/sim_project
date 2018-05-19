@@ -10,21 +10,6 @@ import Divider from 'material-ui/Divider';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
-const styles = {
-  thumbOff: {
-    backgroundColor: '#86ACA5',
-  },
-  trackOff: {
-    backgroundColor: '#E4E7E6',
-  },
-  thumbSwitched: {
-    backgroundColor: '#86ACA5',
-  },
-  trackSwitched: {
-    backgroundColor: '#C8E7E1',
-  }
-};
-
 class Login extends Component {
   static muiName = 'FlatButton';
 
@@ -85,10 +70,6 @@ class MyAppBar extends Component {
           onToggle={this.handleChange}
           labelPosition="right"
           style={{margin: 20}}
-          thumbStyle={styles.thumbOff}
-          trackStyle={styles.trackOff}
-          thumbSwitchedStyle={styles.thumbSwitched}
-          trackSwitchedStyle={styles.trackSwitched}
         />
         <AppBar
           title="Idées Citoyennes"
