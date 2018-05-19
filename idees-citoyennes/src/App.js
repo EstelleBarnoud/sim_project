@@ -7,6 +7,8 @@ import Description from './Description';
 import Progress from './Progress';
 import ReactionBar from './ReactionBar';
 import Reactions from './Reactions';
+import Paper from 'material-ui/Paper';
+import Divider from 'material-ui/Divider';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
@@ -20,11 +22,17 @@ class App extends Component {
           <div className="App">
             <Nav />
             <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
-              <Title />
-              <Description />
-              <Progress />
-              <ReactionBar />
-              <Reactions />
+              <Paper zDepth={2} style={{padding: 50}}>
+                <Title />
+                <Divider />
+                <Description />
+                <Divider />
+                <Progress />
+                <Divider />
+                <ReactionBar />
+                <Divider />
+                <Reactions />
+              </Paper>
             </div>
             <div>
               <h3>Source d'infos</h3>

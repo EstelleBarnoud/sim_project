@@ -12,6 +12,7 @@ const styles = {
     wrapper: {
       display: 'flex',
       flexWrap: 'wrap',
+      padding: 25
     },
   };
   

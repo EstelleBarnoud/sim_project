@@ -49,7 +49,7 @@ class Progress extends React.Component {
     const contentStyle = {margin: '0 16px'};
 
     return (
-      <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
+      <div style={{width: '100%', maxWidth: 700, padding: 25}}>
         <h2> Avancement </h2>
         <Stepper linear={false} activeStep={stepIndex}>
           <Step>
