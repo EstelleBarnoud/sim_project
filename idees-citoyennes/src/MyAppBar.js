@@ -6,6 +6,7 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
+import Divider from 'material-ui/Divider';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
@@ -14,7 +15,7 @@ class Login extends Component {
 
   render() {
     return (
-      <FlatButton {...this.props} label="Login" />
+      <FlatButton {...this.props} label="Se connecter" />
     );
   }
 }
@@ -28,9 +29,10 @@ const Logged = (props) => (
     targetOrigin={{horizontal: 'right', vertical: 'top'}}
     anchorOrigin={{horizontal: 'right', vertical: 'top'}}
   >
-    <MenuItem primaryText="Refresh" />
-    <MenuItem primaryText="Help" />
-    <MenuItem primaryText="Sign out" />
+    <MenuItem primaryText="Mon compte" />
+    <MenuItem primaryText="Aide" />
+    <Divider />
+    <MenuItem primaryText="Se déconnecter" />
   </IconMenu>
 );
 
