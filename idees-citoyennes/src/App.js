@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import MyAppBar from './MyAppBar';
-import Description from './Description';
 import Title from './Title';
+import Description from './Description';
+import Progress from './Progress';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
@@ -14,9 +15,10 @@ class App extends Component {
           <header>
             <MyAppBar />
           </header>
-          <div className="App">
+          <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
             <Title />
             <Description />
+            <Progress />
           </div>
         </div>
       </ MuiThemeProvider>
