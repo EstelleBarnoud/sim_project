@@ -38,8 +38,8 @@ Logged.muiName = 'IconMenu';
 
 
 class MyAppBar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.handleToggle = this.handleToggle.bind(this)
     this.handleClose = this.handleClose.bind(this)
     this.state = {
