@@ -1,7 +1,9 @@
 import React from 'react';
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
-import SvgIconFace from 'material-ui/svg-icons/action/face';
+import SvgIconPeople from 'material-ui/svg-icons/social/people';
+import SvgIconPublic from 'material-ui/svg-icons/social/public';
+import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
 
 const styles = {
     chip: {
@@ -27,12 +29,22 @@ class Chips extends React.Component {
         return (
             <div style={styles.wrapper}>
                 <Chip
-                    onRequestDelete={handleReduce}
-                    onClick={handleExpand}
                     style={styles.chip}
                 >
-                    <Avatar color="#444" icon={<SvgIconFace />} />
-                    SvgIcon Avatar Chip
+                    <Avatar color="#444" icon={<SvgIconPublic />} />
+                    Environnement
+                </Chip>
+                <Chip
+                    style={styles.chip}
+                >
+                    <Avatar color="#444" icon={<SvgIconPeople />} />
+                    Solidarité
+                </Chip>
+                <Chip
+                    style={styles.chip}
+                >
+                    <Avatar color="#444" icon={<ActionFavoriteBorder />} />
+                    Santé
                 </Chip>
             </div>
         );

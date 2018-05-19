@@ -25,7 +25,7 @@ class App extends Component {
               <Progress />
               <ReactionBar />
               <Reactions />
-              </div>
+            </div>
             <div>
               <h3>Source d'infos</h3>
               <p>Article 1</p>

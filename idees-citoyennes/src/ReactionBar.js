@@ -2,8 +2,8 @@ import React from 'react';
 import Checkbox from 'material-ui/Checkbox';
 import ActionFavorite from 'material-ui/svg-icons/action/favorite';
 import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
-import Visibility from 'material-ui/svg-icons/action/visibility';
-import VisibilityOff from 'material-ui/svg-icons/action/visibility-off';
+import Loop from 'material-ui/svg-icons/av/loop';
+import Share from 'material-ui/svg-icons/social/share';
 import './App.css';
 
 const styles = {
@@ -38,13 +38,15 @@ class ReactionBar extends React.Component {
           style={styles.checkbox}
         />
         <Checkbox
-          checkedIcon={<Visibility />}
-          uncheckedIcon={<VisibilityOff />}
-          label="Autre action"
+          checkedIcon={<Loop />}
+          uncheckedIcon={<Loop />}
+          label="Suivre"
           style={styles.checkbox}
         />
         <Checkbox
-          label="Action"
+          checkedIcon={<Share />}
+          uncheckedIcon={<Share />}
+          label="Partager"
           style={styles.checkbox}
         />
       </div>
