@@ -9,11 +9,13 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div className="App">
+        <div>
           <header>
             <MyAppBar />
           </header>
-          <Enonce />
+          <div className="App">
+            <Enonce />
+          </div>
         </div>
       </ MuiThemeProvider>
     );

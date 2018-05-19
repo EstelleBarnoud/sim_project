@@ -57,7 +57,7 @@ class MyAppBar extends Component {
         />
         <AppBar
           title="Idées Citoyennes"
-          iconElementLeft={<IconButton><NavigationClose /></IconButton>}
+          // iconElementLeft={<IconButton><NavigationClose /></IconButton>}
           iconElementRight={this.state.logged ? <Logged /> : <Login />}
         />
       </div>
