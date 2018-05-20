@@ -21,17 +21,7 @@ const muiTheme = getMuiTheme({
   },
 });
 
-// export const Home = () => (
-//   <div>
-//       <div style={{padding: 40}}>
-//       <p style={{fontSize: "large"}}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager</p>
-//       <Link to="/project">Projet</Link>
-//     </div>
-//     <MyTabs />
-//   </div>
-// );
-
-const Project = () => (
+export const Project = () => (
   <div className="App">
     <Nav />
     <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>

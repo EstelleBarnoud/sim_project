@@ -1,7 +1,8 @@
-import React from 'react';
-import {Tabs, Tab} from 'material-ui/Tabs';
+import React from 'react';import {Tabs, Tab} from 'material-ui/Tabs';
 // From https://github.com/oliviertassinari/react-swipeable-views
 import SwipeableViews from 'react-swipeable-views';
+import { Route, Link } from 'react-router-dom';
+import {Project} from './App';
 
 const styles = {
   headline: {
@@ -15,7 +16,7 @@ const styles = {
   },
 };
 
-export default class MyTabs extends React.Component {
+class MyTabs extends React.Component {
 
   constructor(props) {
     super(props);
@@ -49,6 +50,8 @@ export default class MyTabs extends React.Component {
           <div>
             <h2 style={styles.headline}>Tabs with slide effect</h2>
             Swipe to see the next slide.<br />
+            <Link to="/project">Projet</Link>
+            <Route path="/project" component={Project} />
           </div>
           <div style={styles.slide}>
             slide n°2
@@ -61,3 +64,5 @@ export default class MyTabs extends React.Component {
     );
   }
 }
+
+export default MyTabs;
