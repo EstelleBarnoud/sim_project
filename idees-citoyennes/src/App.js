@@ -8,6 +8,7 @@ import Progress from './Progress';
 import ReactionBar from './ReactionBar';
 import Reactions from './Reactions';
 import Links from './Links';
+import MyTabs from './MyTabs';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -22,9 +23,12 @@ const muiTheme = getMuiTheme({
 });
 
 export const Home = () => (
-  <div style={{padding: 40}}>
-    <h2>Home</h2>
-    <Link to="/project">Projet</Link>
+  <div>
+      <div style={{padding: 40}}>
+      <p style={{fontSize: "large"}}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager</p>
+      <Link to="/project">Projet</Link>
+    </div>
+    <MyTabs />
   </div>
 );
 
