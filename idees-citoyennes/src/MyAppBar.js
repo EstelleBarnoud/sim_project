@@ -76,12 +76,12 @@ class MyAppBar extends Component {
         />
         <AppBar
           title="Idées Citoyennes"
-          // iconElementLeft={<div><img src={require('./image/icon.png')} alt="" style={{height: '100%', width: '100%', objectFit: "contain"}} /></div>}
+          iconElementLeft={<div style={{height: 45, width: '100%', paddingRight: 15, paddingLeft: 15}}><img src={require('./image/icon.png')} alt="" /></div>}
           // onLeftIconButtonTouchTap={this.handleToggle}
           onLeftIconButtonClick={this.handleToggle}
           onTitleClick={this.redirect}
           iconElementRight={this.state.logged ? <Logged /> : <Login />}
-          style={{ backgroundColor: '#86ACA5'}}
+          style={{maxLength: 64}}
         />
         {/* <Drawer
           docked={false}
