@@ -7,16 +7,25 @@ import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
 import Divider from 'material-ui/Divider';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import Account from 'material-ui/svg-icons/action/account-circle';
 // import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import './App.css';
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.signin = this.signin.bind(this)
+  }
+  
   static muiName = 'FlatButton';
+
+  signin = () => {
+    console.log("Connexion Request");
+  };
 
   render() {
     return (
-      <FlatButton {...this.props} label="Se connecter" />
+      <FlatButton {...this.props} label="Se connecter" onClick={this.signin} />
     );
   }
 }
@@ -25,12 +34,13 @@ const Logged = (props) => (
   <IconMenu
     {...props}
     iconButtonElement={
-      <IconButton><MoreVertIcon /></IconButton>
+      <IconButton><Account /></IconButton>
     }
     targetOrigin={{horizontal: 'right', vertical: 'top'}}
     anchorOrigin={{horizontal: 'right', vertical: 'top'}}
   >
     <MenuItem primaryText="Mon compte" />
+    <MenuItem primaryText="Paramètres" />
     <MenuItem primaryText="Aide" />
     <Divider />
     <MenuItem primaryText="Se déconnecter" />
@@ -38,7 +48,6 @@ const Logged = (props) => (
 );
 
 Logged.muiName = 'IconMenu';
-
 
 class MyAppBar extends Component {
   constructor(props) {
@@ -69,7 +78,7 @@ class MyAppBar extends Component {
       <div>
         <Toggle
           label="Logged"
-          defaultToggled={true}
+          defaultToggled={false}
           onToggle={this.handleChange}
           labelPosition="right"
           style={{margin: 20}}
