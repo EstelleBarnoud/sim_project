@@ -7,6 +7,7 @@ import Description from './Description';
 import Progress from './Progress';
 import ReactionBar from './ReactionBar';
 import Reactions from './Reactions';
+import Links from './Links';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -44,10 +45,7 @@ class App extends Component {
                 </div>
               </Paper>
             </div>
-            <div>
-              <h3>Source d'infos</h3>
-              <p>Article 1</p>
-            </div>
+            <Links />
           </div>
         </div>
       </ MuiThemeProvider>
