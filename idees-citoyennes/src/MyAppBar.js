@@ -14,7 +14,17 @@ import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 import './App.css';
 import {white} from 'material-ui/styles/colors';
 import { Route, Link } from 'react-router-dom';
-import {Home} from './App.js';
+import MyTabs from './MyTabs';
+
+const Home = () => (
+  <div>
+      <div style={{padding: 40}}>
+      <p style={{fontSize: "large"}}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager</p>
+      <Link to="/project">Projet</Link>
+    </div>
+    <MyTabs />
+  </div>
+);
 
 class Login extends Component {
   constructor(props) {
@@ -89,8 +99,6 @@ class MyAppBar extends Component {
   handleToggle = () => this.setState({open: !this.state.open});
 
   handleClose = () => this.setState({open: false});
-  
-  redirect = () => console.log("Redirection request");
 
   state = {
     logged: true,
@@ -115,7 +123,6 @@ class MyAppBar extends Component {
           iconElementLeft={<div style={{height: 45, width: '100%', paddingRight: 15, paddingLeft: 15}}><img src={require('./image/icon.png')} alt="" /></div>}
           // onLeftIconButtonTouchTap={this.handleToggle}
           onLeftIconButtonClick={this.handleToggle}
-          onTitleClick={this.redirect}
           iconElementRight={this.state.logged ? <Logged /> : <Login />}
           style={{maxLength: 64}}
         />
