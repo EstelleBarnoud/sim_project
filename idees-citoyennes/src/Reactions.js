@@ -1,6 +1,4 @@
 import React from 'react';
-import {Card, CardHeader, CardText} from 'material-ui/Card';
-import Account from 'material-ui/svg-icons/action/account-circle';
 import Comment from './Comment';
 
 class Reactions extends React.Component
