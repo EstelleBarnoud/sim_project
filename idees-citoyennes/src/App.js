@@ -59,7 +59,6 @@ class App extends Component {
           <Router>
             <header>
               <MyAppBar />
-              <Route exact path="/" component={Home} />
               <Route path="/project" component={Project} />
             </header>
           </Router>
