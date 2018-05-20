@@ -8,6 +8,8 @@ import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
 import Divider from 'material-ui/Divider';
 import Account from 'material-ui/svg-icons/action/account-circle';
+import Badge from 'material-ui/Badge';
+import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 // import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import './App.css';
 
@@ -19,32 +21,54 @@ class Login extends Component {
   
   static muiName = 'FlatButton';
 
+  signup = () => {
+    console.log("Sign up Request");
+  };
+
   signin = () => {
-    console.log("Connexion Request");
+    console.log("Sign in Request");
   };
 
   render() {
     return (
-      <FlatButton {...this.props} label="Se connecter" onClick={this.signin} />
+      <div>
+        <FlatButton {...this.props} label="S'inscrire" onClick={this.signup} />
+        <FlatButton {...this.props} label="Se connecter" onClick={this.signin} />
+      </div>
     );
   }
 }
 
+function showNotif(){
+  console.log("Notification Request");
+};
+
 const Logged = (props) => (
-  <IconMenu
-    {...props}
-    iconButtonElement={
-      <IconButton><Account /></IconButton>
-    }
-    targetOrigin={{horizontal: 'right', vertical: 'top'}}
-    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-  >
-    <MenuItem primaryText="Mon compte" />
-    <MenuItem primaryText="Paramètres" />
-    <MenuItem primaryText="Aide" />
-    <Divider />
-    <MenuItem primaryText="Se déconnecter" />
-  </IconMenu>
+  <div style={{height: 45, width: '100%', marginTop: -22, paddingRight: 15, paddingLeft: 15}}>
+      <Badge
+        badgeContent={10}
+        secondary={true}
+        badgeStyle={{top: 22, right: 22}}
+      >
+        <IconButton tooltip="Notifications" onClick={showNotif}>
+          <NotificationsIcon />
+        </IconButton>
+      </Badge>
+      <IconMenu
+        {...props}
+        iconButtonElement={
+          <IconButton><Account /></IconButton>
+        }
+        targetOrigin={{horizontal: 'right', vertical: 'top'}}
+        anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+      >
+        <MenuItem primaryText="Mon compte" />
+        <MenuItem primaryText="Paramètres" />
+        <MenuItem primaryText="Aide" />
+        <Divider />
+        <MenuItem primaryText="Se déconnecter" />
+      </IconMenu>
+    </div>
 );
 
 Logged.muiName = 'IconMenu';
