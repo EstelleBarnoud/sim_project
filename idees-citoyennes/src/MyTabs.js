@@ -1,4 +1,6 @@
-import React from 'react';import {Tabs, Tab} from 'material-ui/Tabs';
+import React from 'react';
+import Grid from './Grid'
+import {Tabs, Tab} from 'material-ui/Tabs';
 // From https://github.com/oliviertassinari/react-swipeable-views
 import SwipeableViews from 'react-swipeable-views';
 import { Route, Link } from 'react-router-dom';
@@ -54,10 +56,10 @@ class MyTabs extends React.Component {
             <Route path="/project" component={Project} />
           </div>
           <div style={styles.slide}>
-            slide n°2
+            <Grid />
           </div>
           <div style={styles.slide}>
-            slide n°3
+            <Grid />
           </div>
         </SwipeableViews>
       </div>

@@ -26,7 +26,7 @@ export const Project = () => (
     <Nav />
     <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
       <Paper zDepth={2} >
-        <img src={ require('./image/ravi-roshan-383162-unsplash.jpg') } alt="" />
+        <img src={ require('./images/ravi-roshan-383162-unsplash.jpg') } alt="" />
         <div style={{padding: 50, paddingTop: 20}}>
           <Title />
           <Divider />

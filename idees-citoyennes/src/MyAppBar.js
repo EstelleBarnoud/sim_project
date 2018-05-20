@@ -117,7 +117,7 @@ class MyAppBar extends Component {
         />
         <AppBar
           title={<Link to="/" style={{color: white, textDecoration: "none", outline: "none", fontFamily: "Georgia"}}>Idées Citoyennes</Link>}
-          iconElementLeft={<div style={{height: 45, width: '100%', paddingRight: 15, paddingLeft: 15}}><img src={require('./image/icon.png')} alt="" /></div>}
+          iconElementLeft={<div style={{height: 45, width: '100%', paddingRight: 15, paddingLeft: 15}}><img src={require('./images/icon.png')} alt="" /></div>}
           // onLeftIconButtonTouchTap={this.handleToggle}
           onLeftIconButtonClick={this.handleToggle}
           iconElementRight={this.state.logged ? <Logged /> : <Login />}
