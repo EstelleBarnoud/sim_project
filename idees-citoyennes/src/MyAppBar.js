@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import AppBar from 'material-ui/AppBar';
-import Drawer from 'material-ui/Drawer';
+// import Drawer from 'material-ui/Drawer';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
@@ -8,7 +8,8 @@ import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
 import Divider from 'material-ui/Divider';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
+// import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import './App.css';
 
 class Login extends Component {
   static muiName = 'FlatButton';
@@ -53,6 +54,8 @@ class MyAppBar extends Component {
 
   handleClose = () => this.setState({open: false});
   
+  redirect = () => console.log("Redirection request");
+
   state = {
     logged: true,
   };
@@ -73,13 +76,14 @@ class MyAppBar extends Component {
         />
         <AppBar
           title="Idées Citoyennes"
-          // iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-          onLeftIconButtonTouchTap={this.handleToggle}
+          // iconElementLeft={<div><img src={require('./image/icon.png')} alt="" style={{height: '100%', width: '100%', objectFit: "contain"}} /></div>}
+          // onLeftIconButtonTouchTap={this.handleToggle}
           onLeftIconButtonClick={this.handleToggle}
+          onTitleClick={this.redirect}
           iconElementRight={this.state.logged ? <Logged /> : <Login />}
           style={{ backgroundColor: '#86ACA5'}}
         />
-        <Drawer
+        {/* <Drawer
           docked={false}
           width={200}
           open={this.state.open}
@@ -87,7 +91,7 @@ class MyAppBar extends Component {
         >
           <MenuItem onTouchTap={this.handleClose}>Menu Item 1</MenuItem>
           <MenuItem onTouchTap={this.handleClose}>Menu Item 2</MenuItem>
-        </Drawer>
+        </Drawer> */}
       </div>
     );
   }

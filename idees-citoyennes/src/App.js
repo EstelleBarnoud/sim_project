@@ -31,8 +31,8 @@ class App extends Component {
             <Nav />
             <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
               <Paper zDepth={2} >
-                <img src={ require('./ravi-roshan-383162-unsplash.jpg') } />
-                <div style={{padding: 50}}>
+                <img src={ require('./image/ravi-roshan-383162-unsplash.jpg') } alt="" />
+                <div style={{padding: 50, paddingTop: 20}}>
                   <Title />
                   <Divider />
                   <Description />

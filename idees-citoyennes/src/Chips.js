@@ -15,14 +15,6 @@ const styles = {
       padding: 25
     },
   };
-  
-function handleReduce() {
-    alert('You clicked the delete button.');
-}
-  
-function handleExpand() {
-    alert('You clicked the Chip.');
-}
 
 class Chips extends React.Component {
 

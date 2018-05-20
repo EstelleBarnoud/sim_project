@@ -18,7 +18,7 @@ class Links extends React.Component
                 <div>
                     <Paper zDepth={2} style={{marginRight: -20, marginTop: -20}}>
                         <List>
-                            <ListItem primaryText="Sources" disabled="true" style={style} />
+                            <ListItem primaryText="Sources" disabled={true} style={style} />
                             <ListItem primaryText="Article 1" leftIcon={<Link />} />
                             <ListItem primaryText="Article 2" leftIcon={<Link />} />
                             <ListItem primaryText="Article 3" leftIcon={<Link />} />
@@ -27,7 +27,7 @@ class Links extends React.Component
                         </List>
                         <Divider />
                         <List>
-                            <ListItem primaryText="Pour aller plus loin" disabled="true" style={style} />
+                            <ListItem primaryText="Pour aller plus loin" disabled={true} style={style} />
                             <ListItem primaryText="Article 1" leftIcon={<Link />} />
                             <ListItem primaryText="Article 2" leftIcon={<Link />} />
                             <ListItem primaryText="Article 3" leftIcon={<Link />} />
