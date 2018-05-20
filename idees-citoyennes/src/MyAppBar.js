@@ -13,14 +13,8 @@ import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 // import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import './App.css';
 import {white} from 'material-ui/styles/colors';
-import { Route, Link } from "react-router-dom";
-
-const Home = () => (
-  <div style={{padding: 40}}>
-    <h2>Home</h2>
-    <Link to="/project">Projet</Link>
-  </div>
-);
+import { Route, Link } from 'react-router-dom';
+import {Home} from './App.js';
 
 class Login extends Component {
   constructor(props) {
@@ -117,7 +111,7 @@ class MyAppBar extends Component {
           style={{margin: 20}}
         />
         <AppBar
-          title={<Link to="/" style={{color: {white}, textDecoration: "none", fontFamily: "Georgia"}}>Idées Citoyennes</Link>}
+          title={<Link to="/" style={{color: white, textDecoration: "none", outline: "none", fontFamily: "Georgia"}}>Idées Citoyennes</Link>}
           iconElementLeft={<div style={{height: 45, width: '100%', paddingRight: 15, paddingLeft: 15}}><img src={require('./image/icon.png')} alt="" /></div>}
           // onLeftIconButtonTouchTap={this.handleToggle}
           onLeftIconButtonClick={this.handleToggle}

@@ -21,7 +21,7 @@ const muiTheme = getMuiTheme({
   },
 });
 
-const Home = () => (
+export const Home = () => (
   <div style={{padding: 40}}>
     <h2>Home</h2>
     <Link to="/project">Projet</Link>
