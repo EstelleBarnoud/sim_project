@@ -12,6 +12,7 @@ import Badge from 'material-ui/Badge';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 // import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import './App.css';
+import {white} from 'material-ui/styles/colors';
 
 class Login extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ const Logged = (props) => (
         badgeStyle={{top: 22, right: 22}}
       >
         <IconButton tooltip="Notifications" onClick={showNotif}>
-          <NotificationsIcon />
+          <NotificationsIcon color={white} />
         </IconButton>
       </Badge>
       <IconMenu
@@ -108,7 +109,7 @@ class MyAppBar extends Component {
           style={{margin: 20}}
         />
         <AppBar
-          title="Idées Citoyennes"
+          title={<span style={{fontFamily: "Georgia"}}>Idées Citoyennes</span>}
           iconElementLeft={<div style={{height: 45, width: '100%', paddingRight: 15, paddingLeft: 15}}><img src={require('./image/icon.png')} alt="" /></div>}
           // onLeftIconButtonTouchTap={this.handleToggle}
           onLeftIconButtonClick={this.handleToggle}
