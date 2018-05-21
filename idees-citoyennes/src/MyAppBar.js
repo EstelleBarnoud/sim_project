@@ -39,7 +39,7 @@ const styles = {
     maxWidth: 400
   },
   badge: {
-    marginTop: -20
+    marginTop: -35
   },
   menu: {
     paddingRight: 15
@@ -101,12 +101,27 @@ const Logged = (props) => (
       <Badge
         badgeContent={10}
         secondary={true}
-        badgeStyle={{top: 22, right: 22}}
+        badgeStyle={{top: 35, right: 22}}
         style={styles.badge}
       >
-        <IconButton tooltip="Notifications" onClick={showNotif}>
-          <NotificationsIcon color={white} />
-        </IconButton>
+        <IconMenu
+          {...props}
+          iconButtonElement={
+            <IconButton>
+              <IconButton tooltip="Notifications" onClick={showNotif}>
+                <NotificationsIcon color={white} />
+              </IconButton>
+            </IconButton>
+          }
+          targetOrigin={{horizontal: 'right', vertical: 'top'}}
+          anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+          style={styles.menu}
+        >
+          <MenuItem primaryText="Notification 1" />
+          <MenuItem primaryText="Notification 2" />
+          <MenuItem primaryText="Notification 3" />
+          <MenuItem primaryText="Notification 4" />
+        </IconMenu>
       </Badge>
       <IconMenu
         {...props}
