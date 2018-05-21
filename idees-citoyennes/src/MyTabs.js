@@ -5,11 +5,8 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 
 const styles = {
-  headline: {
-    fontSize: 24,
-    paddingTop: 16,
-    marginBottom: 12,
-    fontWeight: 400,
+  swipe: {
+    paddingLeft: 20
   },
   slide: {
     padding: 10,
@@ -46,7 +43,7 @@ class MyTabs extends React.Component {
         <SwipeableViews
           index={this.state.slideIndex}
           onChangeIndex={this.handleChange}
-          style={{paddingLeft: 20}}
+          style={styles.swipe}
         >
           <div>
             <Grid />

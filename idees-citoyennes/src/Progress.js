@@ -3,6 +3,20 @@ import {Step, Stepper, StepButton,} from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 
+const styles = {
+  content: {
+    width: '100%',
+    maxWidth: 700,
+    padding: 25
+  },
+  button: {
+    marginTop: 12
+  },
+  flat: {
+    marginRight: 12
+  }
+}
+
 /**
  * Non-linear steppers allow users to enter a multi-step flow at any point.
  *
@@ -49,7 +63,7 @@ class Progress extends React.Component {
     const contentStyle = {margin: '0 16px'};
 
     return (
-      <div style={{width: '100%', maxWidth: 700, padding: 25}}>
+      <div style={styles.content}>
         <h2> Avancement </h2>
         <Stepper linear={false} activeStep={stepIndex}>
           <Step>
@@ -70,12 +84,12 @@ class Progress extends React.Component {
         </Stepper>
         <div style={contentStyle}>
           <p>{this.getStepContent(stepIndex)}</p>
-          <div style={{marginTop: 12}}>
+          <div style={styles.button}>
             <FlatButton
               label="Back"
               disabled={stepIndex === 0}
               onClick={this.handlePrev}
-              style={{marginRight: 12}}
+              style={styles.flat}
             />
             <RaisedButton
               label="Next"

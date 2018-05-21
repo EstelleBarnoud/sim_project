@@ -24,6 +24,46 @@ const Home = () => (
   </div>
 );
 
+const styles = {
+  right: {
+    display: "flex"
+  },
+  log: {
+    height: 45, width: '100%',
+    paddingRight: 15,
+    paddingLeft: 15,
+    display: "flex",
+  },
+  search: {
+    margin: '0 auto',
+    maxWidth: 400
+  },
+  badge: {
+    marginTop: -20
+  },
+  menu: {
+    paddingRight: 15
+  },
+  toggle: {
+    margin: 20
+  },
+  title: {
+    color: white,
+    textDecoration: "none",
+    outline: "none",
+    fontFamily: "Georgia"
+  },
+  img: {
+    height: 45,
+    width: '100%',
+    paddingRight: 15,
+    paddingLeft: 15
+  },
+  appbar: {
+    maxLength: 64
+  }
+};
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -42,14 +82,11 @@ class Login extends Component {
 
   render() {
     return (
-      <div style={{display: "flex"}}>
+      <div style={styles.right}>
         <SearchBar
           onChange={() => console.log('onChange')}
           onRequestSearch={() => console.log('onRequestSearch')}
-          style={{
-            margin: '0 auto',
-            maxWidth: 400,
-          }}
+          style={styles.search}
         />
         <FlatButton {...this.props} label="S'inscrire" onClick={this.signup} />
         <FlatButton {...this.props} label="Se connecter" onClick={this.signin} />
@@ -63,20 +100,17 @@ function showNotif(){
 };
 
 const Logged = (props) => (
-  <div style={{height: 45, width: '100%', paddingRight: 15, paddingLeft: 15, display: "flex"}}>
+  <div style={styles.log}>
       <SearchBar
         onChange={() => console.log('onChange')}
         onRequestSearch={() => console.log('onRequestSearch')}
-        style={{
-          margin: '0 auto',
-          maxWidth: 400
-        }}
+        style={styles.search}
       />
       <Badge
         badgeContent={10}
         secondary={true}
         badgeStyle={{top: 22, right: 22}}
-        style={{marginTop: -20}}
+        style={styles.badge}
       >
         <IconButton tooltip="Notifications" onClick={showNotif}>
           <NotificationsIcon color={white} />
@@ -89,7 +123,7 @@ const Logged = (props) => (
         }
         targetOrigin={{horizontal: 'right', vertical: 'top'}}
         anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-        style={{paddingRight: 15}}
+        style={styles.menu}
       >
         <MenuItem primaryText="Mon compte" />
         <MenuItem primaryText="Paramètres" />
@@ -132,15 +166,15 @@ class MyAppBar extends Component {
           defaultToggled={false}
           onToggle={this.handleChange}
           labelPosition="right"
-          style={{margin: 20}}
+          style={styles.toggle}
         />
         <AppBar
-          title={<Link to="/" style={{color: white, textDecoration: "none", outline: "none", fontFamily: "Georgia"}}>Idées Citoyennes</Link>}
-          iconElementLeft={<div style={{height: 45, width: '100%', paddingRight: 15, paddingLeft: 15}}><img src={require('./images/icon.png')} alt="" /></div>}
+          title={<Link to="/" style={styles.title}>Idées Citoyennes</Link>}
+          iconElementLeft={<div style={styles.img}><img src={require('./images/icon.png')} alt="" /></div>}
           // onLeftIconButtonTouchTap={this.handleToggle}
           onLeftIconButtonClick={this.handleToggle}
           iconElementRight={this.state.logged ? <Logged /> : <Login />}
-          style={{maxLength: 64}}
+          style={styles.appbar}
         />
         {/* <Drawer
           docked={false}

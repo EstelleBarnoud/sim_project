@@ -8,11 +8,17 @@ import Filter3 from 'material-ui/svg-icons/image/filter-3';
 import Filter4 from 'material-ui/svg-icons/image/filter-4';
 import Filter5 from 'material-ui/svg-icons/image/filter-5';
 
-const style = {
-    paddingLeft: 50,
-    paddingRight: 50,
-    textAlign: "center",
-    fontWeight: "bold"
+const styles = {
+    list: {
+        paddingLeft: 50,
+        paddingRight: 50,
+        textAlign: "center",
+        fontWeight: "bold"
+    },
+    paper: {
+        marginLeft: -20,
+        marginTop: -20
+    }
   }  
 
 class Nav extends React.Component
@@ -20,9 +26,9 @@ class Nav extends React.Component
     render(){
         return(
                 <div>
-                    <Paper zDepth={2} style={{marginLeft: -20, marginTop: -20}}>
+                    <Paper zDepth={2} style={styles.paper}>
                         <List>
-                            <ListItem primaryText="Top 5" style={style} />
+                            <ListItem primaryText="Top 5" style={styles.list} />
                             <ListItem primaryText="Projet 1" leftIcon={<Filter1 />} />
                             <ListItem primaryText="Projet 2" leftIcon={<Filter2 />} />
                             <ListItem primaryText="Projet 3" leftIcon={<Filter3 />} />
@@ -31,7 +37,7 @@ class Nav extends React.Component
                         </List>
                         <Divider />
                         <List>
-                            <ListItem primaryText="Nouveau" style={style} />
+                            <ListItem primaryText="Nouveau" style={styles.list} />
                             <ListItem primaryText="Projet 1" leftIcon={<Filter1 />} />
                             <ListItem primaryText="Projet 2" leftIcon={<Filter2 />} />
                             <ListItem primaryText="Projet 3" leftIcon={<Filter3 />} />
@@ -40,7 +46,7 @@ class Nav extends React.Component
                         </List>
                         <Divider />
                         <List>
-                            <ListItem primaryText="Les + inspirants" style={style} />
+                            <ListItem primaryText="Les + inspirants" style={styles.list} />
                             <ListItem primaryText="Projet 1" leftIcon={<Filter1 />} />
                             <ListItem primaryText="Projet 2" leftIcon={<Filter2 />} />
                             <ListItem primaryText="Projet 3" leftIcon={<Filter3 />} />

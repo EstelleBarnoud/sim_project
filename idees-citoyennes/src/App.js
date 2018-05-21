@@ -21,13 +21,25 @@ const muiTheme = getMuiTheme({
   },
 });
 
+const styles = {
+  sheet:{
+    width: '100%',
+    maxWidth: 700,
+    margin: 'auto'
+  },
+  content:{
+    padding: 50,
+    paddingTop: 20
+  }
+}
+
 export const Project = () => (
   <div className="App">
     <Nav />
-    <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
+    <div style={styles.sheet}>
       <Paper zDepth={2} >
         <img src={ require('./images/ravi-roshan-383162-unsplash.jpg') } alt="" />
-        <div style={{padding: 50, paddingTop: 20}}>
+        <div style={styles.content}>
           <Title />
           <Divider />
           <Description />
