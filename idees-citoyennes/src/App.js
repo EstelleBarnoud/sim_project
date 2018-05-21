@@ -56,16 +56,33 @@ export const Project = () => (
   </div>
 );
 
+const SignUp = () => (
+  <div>
+    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>Inscription</p>
+  </div>
+);
+
+const SignIn = () => (
+  <div>
+    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>Connexion</p>
+  </div>
+);
+
+
 class App extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
           <Router>
-            <header>
-              <MyAppBar />
-              <Route path="/project" component={Project} />
-            </header>
+            <div>
+              <header>
+                <MyAppBar />
+                <Route path="/project" component={Project} />
+              </header>
+              <Route path="/signup" component={SignUp} />
+              <Route path="/signin" component={SignIn} />
+            </div>
           </Router>
         </div>
       </ MuiThemeProvider>

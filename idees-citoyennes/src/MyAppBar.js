@@ -65,20 +65,8 @@ const styles = {
 };
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.signin = this.signin.bind(this)
-  }
   
   static muiName = 'FlatButton';
-
-  signup = () => {
-    console.log("Sign up Request");
-  };
-
-  signin = () => {
-    console.log("Sign in Request");
-  };
 
   render() {
     return (
@@ -88,8 +76,12 @@ class Login extends Component {
           onRequestSearch={() => console.log('onRequestSearch')}
           style={styles.search}
         />
-        <FlatButton {...this.props} label="S'inscrire" onClick={this.signup} />
-        <FlatButton {...this.props} label="Se connecter" onClick={this.signin} />
+        <Link to="/signup">
+          <FlatButton {...this.props} label="S'inscrire" />
+        </Link>
+        <Link to="/signin">
+          <FlatButton {...this.props} label="Se connecter" />
+        </Link>
       </div>
     );
   }
