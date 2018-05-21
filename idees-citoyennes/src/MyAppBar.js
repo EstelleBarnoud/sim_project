@@ -9,6 +9,7 @@ import Toggle from 'material-ui/Toggle';
 import Divider from 'material-ui/Divider';
 import Account from 'material-ui/svg-icons/action/account-circle';
 import Badge from 'material-ui/Badge';
+import SearchBar from 'material-ui-search-bar';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 // import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import './App.css';
@@ -18,7 +19,7 @@ import MyTabs from './MyTabs';
 
 const Home = () => (
   <div>
-    <p style={{fontSize: "large", padding: 40}}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager</p>
+    <p style={{fontSize: "large", padding: 40}}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager.</p>
     <MyTabs />
   </div>
 );
@@ -41,7 +42,15 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{display: "flex"}}>
+        <SearchBar
+          onChange={() => console.log('onChange')}
+          onRequestSearch={() => console.log('onRequestSearch')}
+          style={{
+            margin: '0 auto',
+            maxWidth: 400,
+          }}
+        />
         <FlatButton {...this.props} label="S'inscrire" onClick={this.signup} />
         <FlatButton {...this.props} label="Se connecter" onClick={this.signin} />
       </div>
@@ -54,11 +63,20 @@ function showNotif(){
 };
 
 const Logged = (props) => (
-  <div style={{height: 45, width: '100%', marginTop: -22, paddingRight: 15, paddingLeft: 15}}>
+  <div style={{height: 45, width: '100%', paddingRight: 15, paddingLeft: 15, display: "flex"}}>
+      <SearchBar
+        onChange={() => console.log('onChange')}
+        onRequestSearch={() => console.log('onRequestSearch')}
+        style={{
+          margin: '0 auto',
+          maxWidth: 400
+        }}
+      />
       <Badge
         badgeContent={10}
         secondary={true}
         badgeStyle={{top: 22, right: 22}}
+        style={{marginTop: -20}}
       >
         <IconButton tooltip="Notifications" onClick={showNotif}>
           <NotificationsIcon color={white} />
@@ -71,6 +89,7 @@ const Logged = (props) => (
         }
         targetOrigin={{horizontal: 'right', vertical: 'top'}}
         anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+        style={{paddingRight: 15}}
       >
         <MenuItem primaryText="Mon compte" />
         <MenuItem primaryText="Paramètres" />
