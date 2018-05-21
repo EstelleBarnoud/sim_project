@@ -14,15 +14,7 @@ import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 // import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import './App.css';
 import {white} from 'material-ui/styles/colors';
-import { Route, Link } from 'react-router-dom';
-import MyTabs from './MyTabs';
-
-const Home = () => (
-  <div>
-    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager.</p>
-    <MyTabs />
-  </div>
-);
+import {Link} from 'react-router-dom';
 
 const styles = {
   right: {
@@ -36,6 +28,7 @@ const styles = {
   },
   search: {
     margin: '0 auto',
+    marginRight: 10,
     maxWidth: 400
   },
   badge: {
@@ -48,7 +41,7 @@ const styles = {
     margin: 20
   },
   title: {
-    color: white,
+    color: "currentcolor",
     textDecoration: "none",
     outline: "none",
     fontFamily: "Georgia"
@@ -132,9 +125,15 @@ const Logged = (props) => (
         anchorOrigin={{horizontal: 'right', vertical: 'top'}}
         style={styles.menu}
       >
-        <MenuItem primaryText="Mon compte" />
-        <MenuItem primaryText="Paramètres" />
-        <MenuItem primaryText="Aide" />
+        <Link to="/my-account" style={styles.title}>
+          <MenuItem primaryText="Mon compte" />
+        </Link>
+        <Link to="/settings" style={styles.title}>
+          <MenuItem primaryText="Paramètres" />
+        </Link>
+        <Link to="/about-us" style={styles.title}>
+          <MenuItem primaryText="A propos" />
+        </Link>
         <Divider />
         <MenuItem primaryText="Se déconnecter" />
       </IconMenu>
@@ -192,7 +191,6 @@ class MyAppBar extends Component {
           <MenuItem onTouchTap={this.handleClose}>Menu Item 1</MenuItem>
           <MenuItem onTouchTap={this.handleClose}>Menu Item 2</MenuItem>
         </Drawer> */}
-        <Route exact path="/" component={Home} />
       </div>
     );
   }

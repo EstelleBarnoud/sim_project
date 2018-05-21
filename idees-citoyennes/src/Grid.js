@@ -3,8 +3,7 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import { Route, Link } from 'react-router-dom';
-import {Project} from './App';
+import { Link } from 'react-router-dom';
 
 const styles = {
   root: {
@@ -93,7 +92,6 @@ const Grid = () => (
             <Link to="/project">
                 <img src={tile.img} alt="" style={styles.img} />
             </Link>
-            <Route path="/project" component={Project} />
         </GridTile>
       ))}
     </GridList>

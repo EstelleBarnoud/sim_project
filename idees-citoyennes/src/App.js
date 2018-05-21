@@ -8,6 +8,7 @@ import Progress from './Progress';
 import ReactionBar from './ReactionBar';
 import Reactions from './Reactions';
 import Links from './Links';
+import MyTabs from './MyTabs';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -33,7 +34,14 @@ const styles = {
   }
 }
 
-export const Project = () => (
+const Home = () => (
+  <div>
+    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager.</p>
+    <MyTabs />
+  </div>
+);
+
+const Project = () => (
   <div className="App">
     <Nav />
     <div style={styles.sheet}>
@@ -68,6 +76,23 @@ const SignIn = () => (
   </div>
 );
 
+const MyAccount = () => (
+  <div>
+    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>Mon Compte</p>
+  </div>
+);
+
+const Settings = () => (
+  <div>
+    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>Paramètres</p>
+  </div>
+);
+
+const AboutUs = () => (
+  <div>
+    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>A propos</p>
+  </div>
+);
 
 class App extends Component {
   render() {
@@ -78,10 +103,14 @@ class App extends Component {
             <div>
               <header>
                 <MyAppBar />
-                <Route path="/project" component={Project} />
               </header>
+              <Route exact path="/" component={Home} />
+              <Route path="/project" component={Project} />
               <Route path="/signup" component={SignUp} />
               <Route path="/signin" component={SignIn} />
+              <Route path="/my-account" component={MyAccount} />
+              <Route path="/settings" component={Settings} />
+              <Route path="/about-us" component={AboutUs} />
             </div>
           </Router>
         </div>
