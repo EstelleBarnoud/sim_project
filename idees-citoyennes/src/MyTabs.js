@@ -39,6 +39,7 @@ class MyTabs extends React.Component {
         <Tabs
           onChange={this.handleChange}
           value={this.state.slideIndex}
+          tabItemContainerStyle={{background: "#c7dada"}}
         >
           <Tab label="Les + populaires" value={0} />
           <Tab label="Nouveau" value={1} />
@@ -50,9 +51,8 @@ class MyTabs extends React.Component {
           style={{paddingLeft: 20}}
         >
           <div>
-            <h2 style={styles.headline}>Tabs with slide effect</h2>
-            Swipe to see the next slide.<br />
             <Link to="/project">Projet</Link>
+            <Grid />
             <Route path="/project" component={Project} />
           </div>
           <div style={styles.slide}>

@@ -19,7 +19,7 @@ import MyTabs from './MyTabs';
 
 const Home = () => (
   <div>
-    <p style={{fontSize: "large", padding: 40}}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager.</p>
+    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager.</p>
     <MyTabs />
   </div>
 );
