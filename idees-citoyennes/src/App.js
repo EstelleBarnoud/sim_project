@@ -9,6 +9,7 @@ import ReactionBar from './ReactionBar';
 import Reactions from './Reactions';
 import Links from './Links';
 import MyTabs from './MyTabs';
+import SettingsList from './Settings';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -23,20 +24,25 @@ const muiTheme = getMuiTheme({
 });
 
 const styles = {
-  sheet:{
+  sheet: {
     width: '100%',
     maxWidth: 700,
     margin: 'auto'
   },
-  content:{
+  project: {
     padding: 50,
     paddingTop: 20
+  },
+  content: {
+    fontSize: "large",
+    padding: 20,
+    paddingLeft: 40
   }
 }
 
 const Home = () => (
   <div>
-    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager.</p>
+    <p style={styles.content}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager.</p>
     <MyTabs />
   </div>
 );
@@ -47,7 +53,7 @@ const Project = () => (
     <div style={styles.sheet}>
       <Paper zDepth={2} >
         <img src={ require('./images/ravi-roshan-383162-unsplash.jpg') } alt="" />
-        <div style={styles.content}>
+        <div style={styles.project}>
           <Title />
           <Divider />
           <Description />
@@ -66,31 +72,32 @@ const Project = () => (
 
 const SignUp = () => (
   <div>
-    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>Inscription</p>
+    <p style={styles.content}>Inscription</p>
   </div>
 );
 
 const SignIn = () => (
   <div>
-    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>Connexion</p>
+    <p style={styles.content}>Connexion</p>
   </div>
 );
 
 const MyAccount = () => (
   <div>
-    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>Mon Compte</p>
+    <p style={styles.content}>Mon Compte</p>
   </div>
 );
 
 const Settings = () => (
   <div>
-    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>Paramètres</p>
+    <p style={styles.content}>Paramètres</p>
+    <SettingsList />
   </div>
 );
 
 const AboutUs = () => (
   <div>
-    <p style={{fontSize: "large", padding: 20  , paddingLeft: 40}}>A propos</p>
+    <p style={styles.content}>A propos</p>
   </div>
 );
 
