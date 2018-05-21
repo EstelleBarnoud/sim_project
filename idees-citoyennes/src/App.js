@@ -29,11 +29,11 @@ const styles = {
     maxWidth: 700,
     margin: 'auto'
   },
-  project: {
+  content: {
     padding: 50,
     paddingTop: 20
   },
-  content: {
+  welcome: {
     fontSize: "large",
     padding: 20,
     paddingLeft: 40
@@ -42,7 +42,7 @@ const styles = {
 
 const Home = () => (
   <div>
-    <p style={styles.content}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager.</p>
+    <p style={styles.welcome}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager.</p>
     <MyTabs />
   </div>
 );
@@ -53,7 +53,7 @@ const Project = () => (
     <div style={styles.sheet}>
       <Paper zDepth={2} >
         <img src={ require('./images/ravi-roshan-383162-unsplash.jpg') } alt="" />
-        <div style={styles.project}>
+        <div style={styles.content}>
           <Title />
           <Divider />
           <Description />
@@ -96,8 +96,9 @@ const Settings = () => (
 );
 
 const AboutUs = () => (
-  <div>
-    <p style={styles.content}>A propos</p>
+  <div style={styles.content}>
+    <h2>A propos</h2>
+    <p>Parce que nous pensons que le devoir citoyen ne se limite pas au vote, nous avons décidé de développer un outil numérique accessible à tous.</p>
   </div>
 );
 
