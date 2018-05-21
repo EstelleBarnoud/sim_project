@@ -3,8 +3,6 @@ import Grid from './Grid'
 import {Tabs, Tab} from 'material-ui/Tabs';
 // From https://github.com/oliviertassinari/react-swipeable-views
 import SwipeableViews from 'react-swipeable-views';
-import { Route, Link } from 'react-router-dom';
-import {Project} from './App';
 
 const styles = {
   headline: {
@@ -51,9 +49,7 @@ class MyTabs extends React.Component {
           style={{paddingLeft: 20}}
         >
           <div>
-            <Link to="/project">Projet</Link>
             <Grid />
-            <Route path="/project" component={Project} />
           </div>
           <div style={styles.slide}>
             <Grid />

@@ -3,6 +3,8 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import { Route, Link } from 'react-router-dom';
+import {Project} from './App';
 
 const styles = {
   root: {
@@ -11,8 +13,16 @@ const styles = {
     justifyContent: 'space-around',
   },
   gridList: {
+    width: 1500,
+    height: 450,
     overflowY: 'auto',
   },
+  img: {
+    marginLeft: "auto",
+    marginRight: "auto",
+    display: "block",
+    width: "100%",
+  }
 };
 
 const tilesData = [
@@ -80,7 +90,10 @@ const Grid = () => (
           subtitle={<span>by <b>{tile.author}</b></span>}
           actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
         >
-          <img src={ require('./images/ravi-roshan-383162-unsplash.jpg') } alt="" style={{marginLeft: "auto", marginRight: "auto", display: "block"}} />
+            <Link to="/project">
+                <img src={ require('./images/ravi-roshan-383162-unsplash.jpg') } alt="" style={styles.img} />
+            </Link>
+            <Route path="/project" component={Project} />
         </GridTile>
       ))}
     </GridList>
