@@ -28,49 +28,49 @@ const styles = {
 const tilesData = [
   {
     id: 1,
-    img: './images/ravi-roshan-383162-unsplash.jpg',
+    img: require('./images/ravi-roshan-383162-unsplash.jpg'),
     title: 'Projet 1',
     author: 'jill111',
   },
   {
     id: 2,
-    img: './images/tiffany-nutt-400385-unsplash.jpg',
+    img: require('./images/tiffany-nutt-400385-unsplash.jpg'),
     title: 'Projet 2',
     author: 'pashminu',
   },
   {
     id: 3,
-    img: './images/daria-nepriakhina-21928-unsplash.jpg',
+    img: require('./images/daria-nepriakhina-21928-unsplash.jpg'),
     title: 'Projet 3',
     author: 'Danson67',
   },
   {
     id: 4,
-    img: './images/markus-spiske-624932-unsplash.jpg',
+    img: require('./images/markus-spiske-624932-unsplash.jpg'),
     title: 'Projet 4',
     author: 'fancycrave1',
   },
   {
     id: 5,
-    img: './images/rawpixel-603653-unsplash.jpg',
+    img: require('./images/rawpixel-603653-unsplash.jpg'),
     title: 'Projet 5',
     author: 'Hans',
   },
   {
     id: 6,
-    img: './images/bruce-mars-559226-unsplash.jpg',
+    img: require('./images/bruce-mars-559226-unsplash.jpg'),
     title: 'Projet 6',
     author: 'fancycravel',
   },
   {
     id: 7,
-    img: './images/dane-deaner-411531-unsplash.jpg',
+    img: require('./images/dane-deaner-411531-unsplash.jpg'),
     title: 'Projet 7',
     author: 'jill111',
   },
   {
     id: 8,
-    img: './images/gary-chan-351213-unsplash.jpg',
+    img: require('./images/gary-chan-351213-unsplash.jpg'),
     title: 'Projet 8',
     author: 'BkrmadtyaKarki',
   },
@@ -91,7 +91,7 @@ const Grid = () => (
           actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
         >
             <Link to="/project">
-                <img src={ require('./images/ravi-roshan-383162-unsplash.jpg') } alt="" style={styles.img} />
+                <img src={tile.img} alt="" style={styles.img} />
             </Link>
             <Route path="/project" component={Project} />
         </GridTile>
