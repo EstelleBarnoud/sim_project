@@ -39,7 +39,7 @@ const renderTextField = ({input, label, meta: {touched, error}, ...custom}) => (
 )
 
 const SignInForm = props => {
-  const {mySubmit, handleSubmit, pristine, reset, submitting} = props
+  const {mySubmit, handleSubmit, pristine, submitting} = props
   return (
     <form onSubmit={handleSubmit(mySubmit)}>
       <div>

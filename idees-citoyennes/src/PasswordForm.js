@@ -37,7 +37,7 @@ const renderTextField = ({input, label, meta: {touched, error}, ...custom}) => (
 )
 
 const PasswordForm = props => {
-  const {mySubmit, handleSubmit, pristine, reset, submitting} = props
+  const {mySubmit, handleSubmit, pristine, submitting} = props
   return (
     <form onSubmit={handleSubmit(mySubmit)}>
       <div>

@@ -21,7 +21,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: '#A4C639',
+    primary1Color: '#86ACA5',
     accent1Color: '#FAB16C'
   },
 });
