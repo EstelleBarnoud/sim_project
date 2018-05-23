@@ -2,8 +2,13 @@ import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
+import RaisedButton from 'material-ui/RaisedButton';
 import areIntlLocalesSupported from 'intl-locales-supported';
 
+const style = {
+    margin: 12,
+  };
+  
 let DateTimeFormat;
 
 if (areIntlLocalesSupported(['fr', 'fa-IR'])) {
@@ -24,7 +29,7 @@ const validate = values => {
     'birthday'
   ]
   requiredFields.forEach(field => {
-    if (!values[field] & field!='birthday') {
+    if (!values[field] & field!=='birthday') {
       errors[field] = 'Obligatoire'
     }
   })
@@ -67,6 +72,15 @@ const renderDatePicker = ({input, label, meta: {touched, error}, children, ...cu
         }).format}
         floatingLabelText={label}
         errorText={touched && error}
+        autoOk={true}
+        //defaultDate=
+        //maxDate=
+        //onChange={(event, index, value) => input.onChange(value)}
+        //{...input}
+        // value={input.value}
+        //{...input}
+        //value = {input.value !== ''? new Date(input.value) : null}
+        //onChange = {(event, value) => {console.log(value); input.onChange(value)}}
     />
 )
 
@@ -87,10 +101,10 @@ const Form = props => {
         <Field name="birthday" component={renderDatePicker} label="Date de naissance"/>
       </div>
       <div>
-        <button type="submit" disabled={pristine || submitting}>Submit</button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>
-          Clear Values
-        </button>
+        <RaisedButton style={style} label="M'inscrire" primary={true} 
+            type="submit" disabled={pristine || submitting} />
+        <RaisedButton style={style} label="Effacer" primary={true}
+            type="button" disabled={pristine || submitting} onClick={reset} />
       </div>
     </form>
   )
