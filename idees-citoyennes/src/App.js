@@ -10,7 +10,9 @@ import Reactions from './Reactions';
 import Links from './Links';
 import MyTabs from './MyTabs';
 import SettingsList from './Settings';
-import Form from './Form';
+import SignUpForm from './SignUpForm';
+import SignInForm from './SignInForm';
+import PasswordForm from './PasswordForm';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -79,13 +81,14 @@ const Project = () => (
 const SignUp = () => (
   <div style={styles.form}>
     <p style={styles.content}>Inscription</p>
-    <Form mySubmit={submit} />
+    <SignUpForm mySubmit={submit} />
   </div>
 );
 
 const SignIn = () => (
-  <div>
+  <div style={styles.form}>
     <p style={styles.content}>Connexion</p>
+    <SignInForm mySubmit={submit} />
   </div>
 );
 
@@ -106,6 +109,13 @@ const AboutUs = () => (
   <div style={styles.content}>
     <h2>A propos</h2>
     <p>Parce que nous pensons que le devoir citoyen ne se limite pas au vote, nous avons décidé de développer un outil numérique accessible à tous.</p>
+  </div>
+);
+
+const Password = () => (
+  <div style={styles.form}>
+    <p style={styles.content}>Récupérer votre mot de passe</p>
+    <PasswordForm mySubmit={submit} />
   </div>
 );
 
@@ -131,6 +141,7 @@ class App extends Component {
               <Route path="/my-account" component={MyAccount} />
               <Route path="/settings" component={Settings} />
               <Route path="/about-us" component={AboutUs} />
+              <Route path="/forgotten-password" component={Password} />
             </div>
           </Router>
         </div>

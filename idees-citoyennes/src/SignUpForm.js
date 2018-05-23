@@ -84,7 +84,7 @@ const renderDatePicker = ({input, label, meta: {touched, error}, children, ...cu
     />
 )
 
-const Form = props => {
+const SignUpForm = props => {
   const {mySubmit, handleSubmit, pristine, reset, submitting} = props
   return (
     <form onSubmit={handleSubmit(mySubmit)}>
@@ -111,6 +111,6 @@ const Form = props => {
 }
 
 export default reduxForm({
-  form: 'SignInForm', // a unique identifier for this form
+  form: 'SignUpForm', // a unique identifier for this form
   validate
-})(Form)
+})(SignUpForm)
