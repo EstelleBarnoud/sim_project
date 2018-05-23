@@ -10,6 +10,7 @@ import Reactions from './Reactions';
 import Links from './Links';
 import MyTabs from './MyTabs';
 import SettingsList from './Settings';
+import Form from './Form';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -32,6 +33,11 @@ const styles = {
   content: {
     padding: 50,
     paddingTop: 20
+  },
+  form: {
+    padding: 20,
+    display: "flex",
+    justifyContent: "center"
   },
   welcome: {
     fontSize: "large",
@@ -71,8 +77,9 @@ const Project = () => (
 );
 
 const SignUp = () => (
-  <div>
+  <div style={styles.form}>
     <p style={styles.content}>Inscription</p>
+    <Form onSubmit={this.submit} />
   </div>
 );
 
@@ -103,6 +110,10 @@ const AboutUs = () => (
 );
 
 class App extends Component {
+  submit = (values) => {
+    // Do something with the form values
+    console.log(values);
+  }
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
