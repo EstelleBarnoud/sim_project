@@ -5,6 +5,20 @@ import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 import Checkbox from 'material-ui/Checkbox';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import DatePicker from 'material-ui/DatePicker';
+import areIntlLocalesSupported from 'intl-locales-supported';
+import persianUtils from 'material-ui-persian-date-picker-utils';
+
+let DateTimeFormat;
+
+if (areIntlLocalesSupported(['fr', 'fa-IR'])) {
+    DateTimeFormat = global.Intl.DateTimeFormat;
+} else {
+    const IntlPolyfill = require('intl');
+    DateTimeFormat = IntlPolyfill.DateTimeFormat;
+    require('intl/locale-data/jsonp/fr');
+    require('intl/locale-data/jsonp/fa-IR');
+  }  
 
 const validate = values => {
   const errors = {}
@@ -47,13 +61,19 @@ const renderCheckbox = ({input, label}) => (
   />
 )
 
-const renderRadioGroup = ({input, ...rest}) => (
-  <RadioButtonGroup
-    {...input}
-    {...rest}
-    valueSelected={input.value}
-    onChange={(event, value) => input.onChange(value)}
-  />
+const renderDatePicker = ({input, ...rest}) => (
+    <DatePicker
+        hintText="Birthday"
+        DateTimeFormat={DateTimeFormat}
+        okLabel="OK"
+        cancelLabel="Annuler"
+        locale="fr"
+        formatDate={new DateTimeFormat('en-US', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+        }).format}
+    />
 )
 
 const renderSelectField = ({
@@ -91,33 +111,8 @@ const Form = props => {
         <Field name="email" component={renderTextField} label="Email" />
       </div>
       <div>
-        <Field name="sex" component={renderRadioGroup}>
-          <RadioButton value="male" label="male" />
-          <RadioButton value="female" label="female" />
+        <Field name="birthday" component={renderDatePicker} label="Birthday">
         </Field>
-      </div>
-      <div>
-        <Field
-          name="favoriteColor"
-          component={renderSelectField}
-          label="Favorite Color"
-        >
-          <MenuItem value="ff0000" primaryText="Red" />
-          <MenuItem value="00ff00" primaryText="Green" />
-          <MenuItem value="0000ff" primaryText="Blue" />
-        </Field>
-      </div>
-      <div>
-        <Field name="employed" component={renderCheckbox} label="Employed" />
-      </div>
-      <div>
-        <Field
-          name="notes"
-          component={renderTextField}
-          label="Notes"
-          multiLine={true}
-          rows={2}
-        />
       </div>
       <div>
         <button type="submit" disabled={pristine || submitting}>Submit</button>
