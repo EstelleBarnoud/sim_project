@@ -79,7 +79,7 @@ const Project = () => (
 const SignUp = () => (
   <div style={styles.form}>
     <p style={styles.content}>Inscription</p>
-    <Form onSubmit={this.submit} />
+    <Form mySubmit={submit} />
   </div>
 );
 
@@ -109,11 +109,12 @@ const AboutUs = () => (
   </div>
 );
 
+const submit = (values) => {
+  // Do something with the form values
+  console.log(values);
+}
+
 class App extends Component {
-  submit = (values) => {
-    // Do something with the form values
-    console.log(values);
-  }
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>

@@ -1,13 +1,8 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import TextField from 'material-ui/TextField';
-import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
-import Checkbox from 'material-ui/Checkbox';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
 import DatePicker from 'material-ui/DatePicker';
 import areIntlLocalesSupported from 'intl-locales-supported';
-import persianUtils from 'material-ui-persian-date-picker-utils';
 
 let DateTimeFormat;
 
@@ -26,19 +21,24 @@ const validate = values => {
     'firstName',
     'lastName',
     'email',
-    'favoriteColor',
-    'notes'
+    'birthday'
   ]
   requiredFields.forEach(field => {
-    if (!values[field]) {
-      errors[field] = 'Required'
+    if (!values[field] & field!='birthday') {
+      errors[field] = 'Obligatoire'
     }
   })
   if (
     values.email &&
     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
   ) {
-    errors.email = 'Invalid email address'
+    errors.email = 'Adresse mail non valide'
+  }
+  if (
+    values.birthday &&
+    (values.birthday>'01-01-2000')
+  ) {
+    errors.birthday = 'Vous devez être majeur pour exprimer votre opinion sur cette plateforme'
   }
   return errors
 }
@@ -53,66 +53,38 @@ const renderTextField = ({input, label, meta: {touched, error}, ...custom}) => (
   />
 )
 
-const renderCheckbox = ({input, label}) => (
-  <Checkbox
-    label={label}
-    checked={input.value ? true : false}
-    onCheck={input.onChange}
-  />
-)
-
-const renderDatePicker = ({input, ...rest}) => (
+const renderDatePicker = ({input, label, meta: {touched, error}, children, ...custom}) => (
     <DatePicker
         hintText="Birthday"
         DateTimeFormat={DateTimeFormat}
         okLabel="OK"
         cancelLabel="Annuler"
         locale="fr"
-        formatDate={new DateTimeFormat('en-US', {
+        formatDate={new DateTimeFormat('fr', {
             day: 'numeric',
             month: 'long',
             year: 'numeric',
         }).format}
+        floatingLabelText={label}
+        errorText={touched && error}
     />
 )
 
-const renderSelectField = ({
-  input,
-  label,
-  meta: {touched, error},
-  children,
-  ...custom
-}) => (
-  <SelectField
-    floatingLabelText={label}
-    errorText={touched && error}
-    {...input}
-    onChange={(event, index, value) => input.onChange(value)}
-    children={children}
-    {...custom}
-  />
-)
-
 const Form = props => {
-  const {handleSubmit, pristine, reset, submitting} = props
+  const {mySubmit, handleSubmit, pristine, reset, submitting} = props
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(mySubmit)}>
       <div>
-        <Field
-          name="firstName"
-          component={renderTextField}
-          label="First Name"
-        />
+        <Field name="firstName" component={renderTextField} label="Prénom" />
       </div>
       <div>
-        <Field name="lastName" component={renderTextField} label="Last Name" />
+        <Field name="lastName" component={renderTextField} label="Nom" />
       </div>
       <div>
         <Field name="email" component={renderTextField} label="Email" />
       </div>
       <div>
-        <Field name="birthday" component={renderDatePicker} label="Birthday">
-        </Field>
+        <Field name="birthday" component={renderDatePicker} label="Date de naissance"/>
       </div>
       <div>
         <button type="submit" disabled={pristine || submitting}>Submit</button>
