@@ -103,7 +103,6 @@ const MyAccount = () => (
 
 const Settings = () => (
   <div>
-    <p style={styles.content}>Paramètres</p>
     <SettingsList />
   </div>
 );

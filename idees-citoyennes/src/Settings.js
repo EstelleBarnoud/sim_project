@@ -12,6 +12,11 @@ const styles = {
     flexWrap: 'wrap',
     justifyContent: 'center'
   },
+  content: {
+    marginRight: 900,
+    padding: 20,
+    paddingLeft: 230
+  },
   paper: {
       marginLeft: 30,
       marginBottom: 40
@@ -20,6 +25,7 @@ const styles = {
 
 const Settings = () => (
   <div style={styles.root}>
+    <h3 style={styles.content}>Paramètres</h3>
     <Paper style={styles.paper}>
       <List>
         <Subheader>Général</Subheader>
