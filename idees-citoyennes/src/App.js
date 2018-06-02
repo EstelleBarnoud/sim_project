@@ -3,6 +3,7 @@ import './App.css';
 import MyAppBar from './MyAppBar';
 import Nav from './Nav';
 import Title from './Title';
+import Goals from './Goals';
 import Description from './Description';
 import Progress from './Progress';
 import ReactionBar from './ReactionBar';
@@ -63,6 +64,8 @@ const Project = () => (
         <img src={ require('./images/ravi-roshan-383162-unsplash.jpg') } alt="" />
         <div style={styles.content}>
           <Title />
+          <Divider />
+          <Goals />
           <Divider />
           <Description />
           <Divider />
