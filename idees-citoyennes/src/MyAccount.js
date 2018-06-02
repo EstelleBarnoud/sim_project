@@ -4,7 +4,10 @@ import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
 import Divider from 'material-ui/Divider';
 import Avatar from 'material-ui/Avatar';
+import RaisedButton from 'material-ui/RaisedButton';
 import Account from 'material-ui/svg-icons/action/account-circle';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import {Link} from 'react-router-dom';
 
 const styles = {
   root: {
@@ -25,6 +28,16 @@ const styles = {
   },
   item: {
       paddingLeft: 10
+  },
+  content: {
+    paddingLeft: 40
+  },
+  add: {
+    display: 'flex',
+    width: 800
+  },
+  button: {
+    padding: 10,
   }
 };
 
@@ -48,6 +61,18 @@ const MyAccount = () => (
             <ListItem style={styles.item} primaryText="Partagés" />
         </List>
     </Paper>
+    <div style={styles.content}>
+        <div style={styles.add}>
+            <Link to="/signup">
+                <RaisedButton
+                    target="_blank"
+                    label="Ajouter un projet"
+                    style={styles.button}
+                    icon={<ContentAdd />}
+                    />
+            </Link>
+        </div>
+    </div>
   </div>
 );
 
