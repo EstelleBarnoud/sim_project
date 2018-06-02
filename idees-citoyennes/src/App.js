@@ -10,6 +10,7 @@ import ReactionBar from './ReactionBar';
 import Reactions from './Reactions';
 import Links from './Links';
 import MyTabs from './MyTabs';
+import Account from './MyAccount';
 import SettingsList from './Settings';
 import SignUpForm from './SignUpForm';
 import SignInForm from './SignInForm';
@@ -97,7 +98,7 @@ const SignIn = () => (
 
 const MyAccount = () => (
   <div>
-    <p style={styles.content}>Mon Compte</p>
+    <Account />
   </div>
 );
 
