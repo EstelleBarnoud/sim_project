@@ -1,8 +1,9 @@
 import React from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
+import Checkbox from 'material-ui/Checkbox';
+import ActionFavorite from 'material-ui/svg-icons/action/favorite';
+import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
 import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import { Link } from 'react-router-dom';
 
 const styles = {
@@ -13,7 +14,7 @@ const styles = {
   },
   gridList: {
     width: 1500,
-    height: 450,
+    height: 600,
     overflowY: 'auto',
   },
   img: {
@@ -21,6 +22,9 @@ const styles = {
     marginRight: "auto",
     display: "block",
     width: "100%",
+  },
+  checkbox: {
+    color: 'white'
   }
 };
 
@@ -78,7 +82,7 @@ const tilesData = [
 const Grid = () => (
   <div style={styles.root}>
     <GridList
-      cellHeight={180}
+      cellHeight={300}
       style={styles.gridList}
     >
       <Subheader>Spring</Subheader>
@@ -87,7 +91,12 @@ const Grid = () => (
           key={tile.id}
           title={tile.title}
           subtitle={<span>by <b>{tile.author}</b></span>}
-          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+          actionIcon={<Checkbox
+            checkedIcon={<ActionFavorite />}
+            uncheckedIcon={<ActionFavoriteBorder />}
+            iconStyle={{fill: 'white'}}
+            style={styles.checkbox}
+          />}
         >
             <Link to="/project">
                 <img src={tile.img} alt="" style={styles.img} />
