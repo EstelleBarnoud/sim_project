@@ -106,7 +106,7 @@ const Logged = (props) => (
               </IconButton>
             </IconButton>
           }
-          targetOrigin={{horizontal: 'right', vertical: 'top'}}
+          targetOrigin={{horizontal: 'right', vertical: 'bottom'}}
           anchorOrigin={{horizontal: 'right', vertical: 'top'}}
           style={styles.menu}
         >
@@ -121,7 +121,7 @@ const Logged = (props) => (
         iconButtonElement={
           <IconButton><Account /></IconButton>
         }
-        targetOrigin={{horizontal: 'right', vertical: 'top'}}
+        targetOrigin={{horizontal: 'right', vertical: 'bottom'}}
         anchorOrigin={{horizontal: 'right', vertical: 'top'}}
         style={styles.menu}
       >

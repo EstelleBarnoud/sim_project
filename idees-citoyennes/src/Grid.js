@@ -11,17 +11,19 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    width: 1100,
+    marginTop: 10,
+    marginLeft: 72
   },
   gridList: {
-    width: 1500,
-    height: 600,
-    overflowY: 'auto',
+    width: '100%',
+    overflowY: 'auto'
   },
   img: {
     marginLeft: "auto",
     marginRight: "auto",
     display: "block",
-    width: "100%",
+    width: "100%"
   },
   checkbox: {
     color: 'white'
@@ -83,6 +85,7 @@ const Grid = () => (
   <div style={styles.root}>
     <GridList
       cellHeight={300}
+      padding={15}
       style={styles.gridList}
     >
       <Subheader>Spring</Subheader>

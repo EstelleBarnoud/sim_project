@@ -9,7 +9,7 @@ const styles = {
     paddingLeft: 20
   },
   slide: {
-    padding: 10,
+    padding: 10
   },
 };
 
@@ -45,7 +45,7 @@ class MyTabs extends React.Component {
           onChangeIndex={this.handleChange}
           style={styles.swipe}
         >
-          <div>
+          <div style={styles.slides}>
             <Grid />
           </div>
           <div style={styles.slide}>
