@@ -37,13 +37,25 @@ const ProjectForm = props => {
   return (
     <form onSubmit={handleSubmit(mySubmit)}>
       <div>
-        <Field name="firstName" component={renderTextField} label="Prénom" />
+        <Field name="name" component={renderTextField} label="Nom du projet" />
       </div>
       <div>
-        <Field name="lastName" component={renderTextField} label="Nom" />
+        <Field name="photo" component={renderTextField} label="Photo" />
       </div>
       <div>
-        <Field name="email" component={renderTextField} label="Email" />
+        <Field name="themes" component={renderTextField} label="Thèmes" />
+      </div>
+      <div>
+        <Field name="goals" component={renderTextField} label="Objectifs" />
+      </div>
+      <div>
+        <Field name="description" component={renderTextField} label="Descriptif" />
+      </div>
+      <div>
+        <Field name="steps" component={renderTextField} label="Etapes" />
+      </div>
+      <div>
+        <Field name="links" component={renderTextField} label="Sources" />
       </div>
       <div>
         <RaisedButton style={style} label="Créer le projet" primary={true} 
