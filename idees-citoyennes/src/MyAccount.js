@@ -65,11 +65,11 @@ const MyAccount = () => (
         <div style={styles.add}>
             <Link to="/create-new-project">
                 <RaisedButton
-                    target="_blank"
-                    label="Ajouter un projet"
-                    style={styles.button}
-                    icon={<ContentAdd />}
-                    />
+                  target="_blank"
+                  label="Ajouter un projet"
+                  style={styles.button}
+                  icon={<ContentAdd />}
+                />
             </Link>
         </div>
     </div>

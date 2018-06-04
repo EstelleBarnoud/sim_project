@@ -49,7 +49,7 @@ const ProjectForm = props => {
         <Field name="goals" component={renderTextField} label="Objectifs" />
       </div>
       <div>
-        <Field name="description" component={renderTextField} label="Descriptif" />
+        <Field name="description" component={renderTextField} label="Descriptif" multiLine={true} />
       </div>
       <div>
         <Field name="steps" component={renderTextField} label="Etapes" />
