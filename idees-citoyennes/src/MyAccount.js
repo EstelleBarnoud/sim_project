@@ -63,7 +63,7 @@ const MyAccount = () => (
     </Paper>
     <div style={styles.content}>
         <div style={styles.add}>
-            <Link to="/signup">
+            <Link to="/create-new-project">
                 <RaisedButton
                     target="_blank"
                     label="Ajouter un projet"

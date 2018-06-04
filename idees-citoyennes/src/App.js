@@ -15,6 +15,7 @@ import SettingsList from './Settings';
 import SignUpForm from './SignUpForm';
 import SignInForm from './SignInForm';
 import PasswordForm from './PasswordForm';
+import ProjectForm from './ProjectForm';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -122,6 +123,13 @@ const Password = () => (
   </div>
 );
 
+const New = () => (
+  <div style={styles.form}>
+    <p style={styles.content}>Nouveau Projet</p>
+    <ProjectForm mySubmit={submit} />
+  </div>
+);
+
 const submit = (values) => {
   // Do something with the form values
   console.log(values);
@@ -145,6 +153,7 @@ class App extends Component {
               <Route path="/settings" component={Settings} />
               <Route path="/about-us" component={AboutUs} />
               <Route path="/forgotten-password" component={Password} />
+              <Route path="/create-new-project" component={New} />
             </div>
           </Router>
         </div>
