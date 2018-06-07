@@ -67,7 +67,7 @@ const MyAccount = () => (
                 <RaisedButton
                   target="_blank"
                   label="Ajouter un projet"
-                  style={styles.button}
+                  //style={styles.button}
                   icon={<ContentAdd />}
                 />
             </Link>

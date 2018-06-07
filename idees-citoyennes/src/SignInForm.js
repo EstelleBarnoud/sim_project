@@ -46,7 +46,7 @@ const SignInForm = props => {
         <Field name="email" component={renderTextField} label="Email" />
       </div>
       <div>
-        <Field name="password" component={renderTextField} label="Mot de Passe" />
+        <Field name="password" type="password" component={renderTextField} label="Mot de Passe" />
       </div>
       <div>
         <RaisedButton style={style} label="Me connecter" primary={true} 
