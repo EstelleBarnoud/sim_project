@@ -29,7 +29,7 @@ const validate = values => {
     'birthday'
   ]
   requiredFields.forEach(field => {
-    if (!values[field] & field!=='birthday') {
+    if (!values[field]) {
       errors[field] = 'Obligatoire'
     }
   })
@@ -58,7 +58,7 @@ const renderTextField = ({input, label, meta: {touched, error}, ...custom}) => (
   />
 )
 
-const renderDatePicker = ({input, label, meta: {touched, error}, children, ...custom}) => (
+const renderDatePicker = ({input, onChange , label, meta: {touched, error}, children, ...custom}) => (
     <DatePicker
         hintText="Birthday"
         DateTimeFormat={DateTimeFormat}
@@ -73,14 +73,9 @@ const renderDatePicker = ({input, label, meta: {touched, error}, children, ...cu
         floatingLabelText={label}
         errorText={touched && error}
         autoOk={true}
-        //defaultDate=
-        //maxDate=
-        //onChange={(event, index, value) => input.onChange(value)}
-        //{...input}
-        // value={input.value}
-        //{...input}
-        //value = {input.value !== ''? new Date(input.value) : null}
-        //onChange = {(event, value) => {console.log(value); input.onChange(value)}}
+        {...input}
+        value = {input.value !== ''? new Date(input.value) : null}
+        onChange = {(event, value) => {input.onChange(value)}}
     />
 )
 
@@ -98,7 +93,7 @@ const SignUpForm = props => {
         <Field name="email" component={renderTextField} label="Email" />
       </div>
       <div>
-        <Field name="birthday" component={renderDatePicker} label="Date de naissance"/>
+        <Field name="birthday" component={renderDatePicker} label="Date de naissance" />
       </div>
       <div>
         <RaisedButton style={style} label="M'inscrire" primary={true} 
