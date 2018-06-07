@@ -5,9 +5,19 @@ import DatePicker from 'material-ui/DatePicker';
 import RaisedButton from 'material-ui/RaisedButton';
 import areIntlLocalesSupported from 'intl-locales-supported';
 
-const style = {
-    margin: 12,
-  };
+const styles = {
+  button: {
+    margin: 12
+  },
+  note: {
+    fontSize: '12px',
+    marginBottom: 10
+  }
+}
+
+const maxDate = new Date();
+maxDate.setFullYear(maxDate.getFullYear() - 18);
+maxDate.setHours(0, 0, 0, 0);
   
 let DateTimeFormat;
 
@@ -38,12 +48,6 @@ const validate = values => {
     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
   ) {
     errors.email = 'Adresse mail non valide'
-  }
-  if (
-    values.birthday &&
-    (values.birthday>'01-01-2000')
-  ) {
-    errors.birthday = 'Vous devez être majeur pour exprimer votre opinion sur cette plateforme'
   }
   return errors
 }
@@ -76,6 +80,8 @@ const renderDatePicker = ({input, onChange , label, meta: {touched, error}, chil
         {...input}
         value = {input.value !== ''? new Date(input.value) : null}
         onChange = {(event, value) => {input.onChange(value)}}
+        maxDate={maxDate}
+        openToYearSelection={true} 
     />
 )
 
@@ -94,11 +100,12 @@ const SignUpForm = props => {
       </div>
       <div>
         <Field name="birthday" component={renderDatePicker} label="Date de naissance" />
+        <p style={styles.note}>Remarque : Vous devez être majeur pour exprimer votre opinion sur cette plateforme</p>
       </div>
       <div>
-        <RaisedButton style={style} label="M'inscrire" primary={true} 
+        <RaisedButton style={styles.button} label="M'inscrire" primary={true} 
             type="submit" disabled={pristine || submitting} />
-        <RaisedButton style={style} label="Effacer" primary={true}
+        <RaisedButton style={styles.button} label="Effacer" primary={true}
             type="button" disabled={pristine || submitting} onClick={reset} />
       </div>
     </form>
