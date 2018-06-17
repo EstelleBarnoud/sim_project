@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
 import Delete from 'material-ui/svg-icons/action/delete';
-import ChipForm from './ChipForm';
+//import ChipForm from './ChipForm';
 
 const styles = {
   submit: { 
@@ -13,6 +13,9 @@ const styles = {
   },
   button: {
     marginTop: 15
+  },
+  goals: {
+    marginLeft: -20 
   }
 };
 
@@ -21,7 +24,8 @@ const validate = values => {
   const requiredFields = [
     'name',
     'themes',
-    'description'
+    'description',
+    'goal1'
   ]
   requiredFields.forEach(field => {
     if (!values[field]) {
@@ -63,33 +67,43 @@ const renderTextField = ({input, label, meta: {touched, error}, ...custom}) => (
   />
 )
 
-const renderChips = ({input: {key, label}, meta: {touched, error}, ...custom}) => (
-  <ChipForm
-    //hintText={label}
-    //floatingLabelText={label}
-    errorText={touched && error}
-    chipData={input}
-    {...input}
-    {...custom}
-  />
-)
+// const renderChips = ({input: {key, label}, meta: {touched, error}, ...custom}) => (
+//   <ChipForm
+//     //hintText={label}
+//     //floatingLabelText={label}
+//     errorText={touched && error}
+//     chipData={input}
+//     {...input}
+//     {...custom}
+//   />
+// )
 
 const renderGoals = ({fields, meta: {error, submitFailed}}) => {
+  let current_index = 1
   return (
-    <ul>
-      {fields.map((goal, index) => (
-        <li key={index}>
-          <Field
-            name={`goal-${index + 1}`}
-            component={renderTextField}
-            label={` Objectif ${index + 1}`}
-          />
-          <IconButton tooltip="Supprimer" onClick={() => fields.remove(index)}>
-            <Delete />
-          </IconButton>
-        </li>
-      ))}
-      <FlatButton style={styles.button} label="Ajouter un objectif" onClick={() => fields.push({})} />
+    <ul style={styles.goals}>
+      <li>
+        <Field
+          name="goal1"
+          component={renderTextField}
+          label="Objectif 1"
+        />
+      </li>
+      {fields.map((goal, index) => {
+        current_index += 1
+        return(
+          <li key={index}>
+            <Field
+              name={`goal${index + 2}`}
+              component={renderTextField}
+              label={` Objectif ${index + 2}`}
+            />
+            <IconButton tooltip="Supprimer" onClick={() => fields.remove(index)}>
+              <Delete />
+            </IconButton>
+          </li>
+      )})}
+      <FlatButton style={styles.button} label="Ajouter un objectif" onClick={() => fields.push({})} disabled={current_index>2} />
     </ul>
   )
 }
