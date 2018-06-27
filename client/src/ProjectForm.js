@@ -6,6 +6,7 @@ import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
 import Delete from 'material-ui/svg-icons/action/delete';
 //import ChipForm from './ChipForm';
+import FileInput from './FileInput.js';
 
 const styles = {
   submit: { 
@@ -207,7 +208,18 @@ const ProjectForm = props => {
         <Field name="name" component={renderTextField} label="Nom du projet" />
       </div>
       <div>
-        <Field name="photo" component={renderTextField} label="Photo" />
+        <FileInput
+          name="add_photo"
+          label="Others:"
+          classNameLabel="file-input-label"
+          className="file-input"
+          dropzone_options={{
+            multiple: false,
+            accept: 'image/*'
+          }}
+        >
+          <span>Add more</span>
+        </FileInput>
       </div>
       <div>
         <FieldArray name="themes" component={renderThemes} label="Thèmes" />
