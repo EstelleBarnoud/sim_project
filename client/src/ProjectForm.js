@@ -14,7 +14,7 @@ const styles = {
   button: {
     marginTop: 15
   },
-  goals: {
+  list: {
     marginLeft: -20 
   }
 };
@@ -23,9 +23,10 @@ const validate = values => {
   const errors = {}
   const requiredFields = [
     'name',
-    'themes',
+    'theme1',
     'description',
-    'goal1'
+    'goal1',
+    'step1'
   ]
   requiredFields.forEach(field => {
     if (!values[field]) {
@@ -78,15 +79,45 @@ const renderTextField = ({input, label, meta: {touched, error}, ...custom}) => (
 //   />
 // )
 
+const renderThemes = ({fields, meta: {error, submitFailed}}) => {
+  let current_index = 1
+  return (
+    <ul style={styles.list}>
+      <li>
+        <Field
+          name="theme1"
+          component={renderTextField}
+          label="Thème"
+        />
+      </li>
+      {fields.map((theme, index) => {
+        current_index += 1
+        return(
+          <li key={index}>
+            <Field
+              name={`theme${index + 2}`}
+              component={renderTextField}
+              label={` Thème ${index + 2}`}
+            />
+            <IconButton tooltip="Supprimer" onClick={() => fields.remove(index)}>
+              <Delete />
+            </IconButton>
+          </li>
+      )})}
+      <FlatButton style={styles.button} label="Ajouter un thème" onClick={() => fields.push({})} disabled={current_index>2} />
+    </ul>
+  )
+}
+
 const renderGoals = ({fields, meta: {error, submitFailed}}) => {
   let current_index = 1
   return (
-    <ul style={styles.goals}>
+    <ul style={styles.list}>
       <li>
         <Field
           name="goal1"
           component={renderTextField}
-          label="Objectif 1"
+          label="Objectif"
         />
       </li>
       {fields.map((goal, index) => {
@@ -108,6 +139,66 @@ const renderGoals = ({fields, meta: {error, submitFailed}}) => {
   )
 }
 
+const renderSteps = ({fields, meta: {error, submitFailed}}) => {
+  let current_index = 1
+  return (
+    <ul style={styles.list}>
+      <li>
+        <Field
+          name="step1"
+          component={renderTextField}
+          label="Etape"
+        />
+      </li>
+      {fields.map((step, index) => {
+        current_index += 1
+        return(
+          <li key={index}>
+            <Field
+              name={`step${index + 2}`}
+              component={renderTextField}
+              label={` Etape ${index + 2}`}
+            />
+            <IconButton tooltip="Supprimer" onClick={() => fields.remove(index)}>
+              <Delete />
+            </IconButton>
+          </li>
+      )})}
+      <FlatButton style={styles.button} label="Ajouter une étape" onClick={() => fields.push({})} disabled={current_index>2} />
+    </ul>
+  )
+}
+
+const renderLinks = ({fields, meta: {error, submitFailed}}) => {
+  let current_index = 1
+  return (
+    <ul style={styles.list}>
+      <li>
+        <Field
+          name="link1"
+          component={renderTextField}
+          label="Source"
+        />
+      </li>
+      {fields.map((link, index) => {
+        current_index += 1
+        return(
+          <li key={index}>
+            <Field
+              name={`link${index + 2}`}
+              component={renderTextField}
+              label={` Source ${index + 2}`}
+            />
+            <IconButton tooltip="Supprimer" onClick={() => fields.remove(index)}>
+              <Delete />
+            </IconButton>
+          </li>
+      )})}
+      <FlatButton style={styles.button} label="Ajouter une source" onClick={() => fields.push({})} disabled={current_index>2} />
+    </ul>
+  )
+}
+
 const ProjectForm = props => {
   const {mySubmit, handleSubmit, pristine, reset, submitting} = props
   return (
@@ -119,7 +210,7 @@ const ProjectForm = props => {
         <Field name="photo" component={renderTextField} label="Photo" />
       </div>
       <div>
-        <Field name="themes" component={renderTextField} label="Thèmes" />
+        <FieldArray name="themes" component={renderThemes} label="Thèmes" />
       </div>
       <div>
         <FieldArray name="goals" component={renderGoals} label="Objectifs" />
@@ -128,10 +219,10 @@ const ProjectForm = props => {
         <Field name="description" component={renderTextField} label="Descriptif" multiLine={true} />
       </div>
       <div>
-        <Field name="steps" component={renderTextField} label="Etapes" />
+        <FieldArray name="steps" component={renderSteps} label="Etapes" />
       </div>
       <div>
-        <Field name="links" component={renderTextField} label="Sources" />
+        <FieldArray name="links" component={renderLinks} label="Sources" />
       </div>
       <div>
         <RaisedButton style={styles.submit} label="Créer le projet" primary={true} 
