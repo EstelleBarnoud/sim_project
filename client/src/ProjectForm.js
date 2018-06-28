@@ -60,7 +60,7 @@ const validate = values => {
     }
   })
   if (!values.goals || !values.goals.length) {
-    errors.goals = {_error: 'Merci de vouloir indiquer au moins un objectif'}
+    errors.goals = 'Merci de vouloir indiquer au moins un objectif'
   } else {
     const goalsArrayErrors = []
     values.goals.forEach((goal, goalIndex) => {
@@ -207,7 +207,7 @@ const renderGoals = ({fields, meta: {error, submitFailed}}) => {
             </IconButton>
           </li>
       )})}
-      <FlatButton style={styles.button} icon={<Add />} label="Ajouter une étape" onClick={() => fields.push({})} disabled={current_index>2} />
+      <FlatButton style={styles.button} icon={<Add />} label="Ajouter un objectif" onClick={() => fields.push({})} disabled={current_index>2} />
     </ul>
   )
 }
