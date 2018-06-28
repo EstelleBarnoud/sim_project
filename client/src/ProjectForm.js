@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
 import Delete from 'material-ui/svg-icons/action/delete';
+import FileInput from './FileInput.js';
 //import ChipForm from './ChipForm';
 
 const styles = {
@@ -16,6 +17,29 @@ const styles = {
   },
   list: {
     marginLeft: -20 
+  },
+  exampleImageInput: {
+    cursor: 'pointer',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    width: '100%',
+    opacity: 0
+  },
+  FFS:{
+    position: 'absolute',
+    lineHeight: '1.5',
+    top: '38',
+    transition: 'none',
+    zIndex: '1',
+    transform: 'none',
+    transformOrigin: 'none',
+    pointerEvents: 'none',
+    userSelect: 'none',
+    fontSize: '16',
+    color: 'rgba(0, 0, 0, 0.8)',
   }
 };
 
@@ -67,6 +91,27 @@ const renderTextField = ({input, label, meta: {touched, error}, ...custom}) => (
     {...custom}
   />
 )
+
+const FileTextField  = ({floatingLabelText, fullWidth, input, label, meta: { touched, error },
+  ...custom }) => {
+    if (input.value && input.value[0] && input.value[0].name) {
+      floatingLabelText = input.value[0].name;
+    }
+    delete input.value;
+    return (
+      <TextField
+        hintText={label}
+        fullWidth={fullWidth}
+        floatingLabelShrinkStyle={styles.FFS}
+        floatingLabelText={floatingLabelText}
+        inputStyle={styles.exampleImageInput}
+        type="file"
+        errorText={error}
+        {...input}
+        {...custom}
+      />
+    )
+}
 
 // const renderChips = ({input: {key, label}, meta: {touched, error}, ...custom}) => (
 //   <ChipForm
@@ -207,7 +252,11 @@ const ProjectForm = props => {
         <Field name="name" component={renderTextField} label="Nom du projet" />
       </div>
       <div>
-        <Field name="photo" component={renderTextField} label="Photo" />
+        <Field name="image" component={FileTextField} floatingLabelText="Choisir une photo"
+        fullWidth={true} />
+      </div>
+      <div>
+        <Field name="fileUpload" label="Choisir une photo" type="file" component={FileInput} />
       </div>
       <div>
         <FieldArray name="themes" component={renderThemes} label="Thèmes" />
