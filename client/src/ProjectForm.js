@@ -5,7 +5,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
 import Delete from 'material-ui/svg-icons/action/delete';
-import FileInput from './FileInput.js';
 //import ChipForm from './ChipForm';
 
 const styles = {
@@ -106,6 +105,7 @@ const FileTextField  = ({floatingLabelText, fullWidth, input, label, meta: { tou
         floatingLabelText={floatingLabelText}
         inputStyle={styles.exampleImageInput}
         type="file"
+        accept='.jpg, .png, .jpeg'
         errorText={error}
         {...input}
         {...custom}
@@ -254,9 +254,6 @@ const ProjectForm = props => {
       <div>
         <Field name="image" component={FileTextField} floatingLabelText="Choisir une photo"
         fullWidth={true} />
-      </div>
-      <div>
-        <Field name="fileUpload" label="Choisir une photo" type="file" component={FileInput} />
       </div>
       <div>
         <FieldArray name="themes" component={renderThemes} label="Thèmes" />
