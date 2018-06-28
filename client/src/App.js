@@ -51,6 +51,11 @@ const styles = {
   }
 }
 
+const submit = (values) => {
+  // Do something with the form values
+  console.log(values);
+}
+
 const Home = () => (
   <div>
     <p style={styles.welcome}>Bienvenue sur Idées  Citoyennes, la plateforme citoyenne pour vous informer et vous engager.</p>
@@ -129,11 +134,6 @@ const New = () => (
     <ProjectForm mySubmit={submit} />
   </div>
 );
-
-const submit = (values) => {
-  // Do something with the form values
-  console.log(values);
-}
 
 class App extends Component {
   render() {

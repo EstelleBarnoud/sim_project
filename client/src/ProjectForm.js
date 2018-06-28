@@ -5,6 +5,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
 import Delete from 'material-ui/svg-icons/action/delete';
+import Add from 'material-ui/svg-icons/av/playlist-add';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 //import ChipForm from './ChipForm';
 
 const styles = {
@@ -113,6 +116,23 @@ const FileTextField  = ({floatingLabelText, fullWidth, input, label, meta: { tou
     )
 }
 
+const renderSelectField = ({
+  input,
+  label,
+  meta: {touched, error},
+  children,
+  ...custom
+}) => (
+  <SelectField
+    floatingLabelText={label}
+    errorText={touched && error}
+    {...input}
+    onChange={(event, index, value) => input.onChange(value)}
+    children={children}
+    {...custom}
+  />
+)
+
 // const renderChips = ({input: {key, label}, meta: {touched, error}, ...custom}) => (
 //   <ChipForm
 //     //hintText={label}
@@ -131,9 +151,13 @@ const renderThemes = ({fields, meta: {error, submitFailed}}) => {
       <li>
         <Field
           name="theme1"
-          component={renderTextField}
+          component={renderSelectField}
           label="Thème"
-        />
+        >
+          <MenuItem value="environment" primaryText="Environnement" />
+          <MenuItem value="health" primaryText="Santé" />
+          <MenuItem value="solidarity" primaryText="Solidarité" />
+        </Field>
       </li>
       {fields.map((theme, index) => {
         current_index += 1
@@ -141,15 +165,19 @@ const renderThemes = ({fields, meta: {error, submitFailed}}) => {
           <li key={index}>
             <Field
               name={`theme${index + 2}`}
-              component={renderTextField}
+              component={renderSelectField}
               label={` Thème ${index + 2}`}
-            />
+            >
+              <MenuItem value="environment" primaryText="Environnement" />
+              <MenuItem value="health" primaryText="Santé" />
+              <MenuItem value="solidarity" primaryText="Solidarité" />
+            </Field>
             <IconButton tooltip="Supprimer" onClick={() => fields.remove(index)}>
               <Delete />
             </IconButton>
           </li>
       )})}
-      <FlatButton style={styles.button} label="Ajouter un thème" onClick={() => fields.push({})} disabled={current_index>2} />
+      <FlatButton style={styles.button} icon={<Add />} label="Ajouter un thème" onClick={() => fields.push({})} disabled={current_index>2} />
     </ul>
   )
 }
@@ -179,7 +207,7 @@ const renderGoals = ({fields, meta: {error, submitFailed}}) => {
             </IconButton>
           </li>
       )})}
-      <FlatButton style={styles.button} label="Ajouter un objectif" onClick={() => fields.push({})} disabled={current_index>2} />
+      <FlatButton style={styles.button} icon={<Add />} label="Ajouter une étape" onClick={() => fields.push({})} disabled={current_index>2} />
     </ul>
   )
 }
@@ -209,7 +237,7 @@ const renderSteps = ({fields, meta: {error, submitFailed}}) => {
             </IconButton>
           </li>
       )})}
-      <FlatButton style={styles.button} label="Ajouter une étape" onClick={() => fields.push({})} disabled={current_index>2} />
+      <FlatButton style={styles.button} icon={<Add />} label="Ajouter une étape" onClick={() => fields.push({})} disabled={current_index>2} />
     </ul>
   )
 }
@@ -239,7 +267,7 @@ const renderLinks = ({fields, meta: {error, submitFailed}}) => {
             </IconButton>
           </li>
       )})}
-      <FlatButton style={styles.button} label="Ajouter une source" onClick={() => fields.push({})} disabled={current_index>2} />
+      <FlatButton style={styles.button} icon={<Add />} label="Ajouter une source" onClick={() => fields.push({})} disabled={current_index>2} />
     </ul>
   )
 }
