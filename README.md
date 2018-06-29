@@ -18,6 +18,7 @@ Front-end development using :
 Back-end development using :
 - <a href=https://www.djangoproject.com/ >Django</a> - High-level Python Web framework
 - <a href=http://www.django-rest-framework.org/ >Django Rest Framework</a> - Powerful and flexible toolkit for building Web APIs
+- <a href=https://sqlite.org/index.html >SQLite</a> - SQL database engine
 
 
 ## Use
@@ -26,4 +27,5 @@ To retrieve the code :
 ```$ git clone https://github.com/EstelleBarnoud/sim_project.git```
 
 The back-end is still under development, but you can test the front-end platform by installing <a href=https://yarnpkg.com/en/>Yarn</a> and lauching in the ```client``` directory :   
-```$ yarn start```
+```$ yarn install  
+$ yarn start ```
