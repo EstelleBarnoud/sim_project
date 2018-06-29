@@ -12,7 +12,7 @@ class Description extends React.Component
         return(
                 <div style={style}>
                     <h2>Descriptif</h2>
-                    <p>Décriver votre projet en quelques mots</p>
+                    <p>Venez aider à planter toutes sortes de végétaux dans les rues de Paris ! Plantes aromatiques, arbres fruitiers, et légumes au pied de chez vous, c'est possible dans la capitale.</p>
                 </div>
               );
     }

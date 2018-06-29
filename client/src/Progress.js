@@ -48,11 +48,11 @@ class Progress extends React.Component {
   getStepContent(stepIndex) {
     switch (stepIndex) {
       case 0:
-        return 'This is the description of our step 1';
+        return 'Donnez des graines ou des fonds pour acheter du matériel';
       case 1:
-        return 'This is the description of our step 2';
+        return 'Inscrivez-vous sur les évènements avec vos voisins';
       case 2:
-        return 'This is the description of our step 3';
+        return "Partagez vos émotions et l'évolution de vos plantes";
       default:
         return 'Click a step to see the details';
     }
@@ -68,17 +68,17 @@ class Progress extends React.Component {
         <Stepper linear={false} activeStep={stepIndex}>
           <Step>
             <StepButton onClick={() => this.setState({stepIndex: 0})}>
-              Step 1
+              Etape 1
             </StepButton>
           </Step>
           <Step>
             <StepButton onClick={() => this.setState({stepIndex: 1})}>
-              Step 2
+              Etape 2
             </StepButton>
           </Step>
           <Step>
             <StepButton onClick={() => this.setState({stepIndex: 2})}>
-              Step 3
+              Etape 3
             </StepButton>
           </Step>
         </Stepper>
@@ -86,13 +86,13 @@ class Progress extends React.Component {
           <p>{this.getStepContent(stepIndex)}</p>
           <div style={styles.button}>
             <FlatButton
-              label="Back"
+              label="Précédent"
               disabled={stepIndex === 0}
               onClick={this.handlePrev}
               style={styles.flat}
             />
             <RaisedButton
-              label="Next"
+              label="Suivant"
               disabled={stepIndex === 2}
               primary={true}
               onClick={this.handleNext}

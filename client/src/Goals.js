@@ -22,9 +22,9 @@ class Goals extends React.Component
                 <div style={styles.content}>
                     <h2>Objectifs</h2>
                     <ul style={styles.list}>
-                        <li style={styles.item}>Objectif 1</li>
-                        <li style={styles.item}>Objectif 2</li>
-                        <li style={styles.item}>Objectif 3</li>
+                        <li style={styles.item}>Purifier l'air de Paris en réduisant l'empreinte carbone</li>
+                        <li style={styles.item}>Encourager la culture collective</li>
+                        <li style={styles.item}>Aider à manger plus sain et plus abordable</li>
                     </ul> 
                 </div>
               );
