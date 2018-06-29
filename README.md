@@ -27,5 +27,7 @@ To retrieve the code :
 ```$ git clone https://github.com/EstelleBarnoud/sim_project.git```
 
 The back-end is still under development, but you can test the front-end platform by installing <a href=https://yarnpkg.com/en/>Yarn</a> and lauching in the ```client``` directory :   
-```$ yarn install  
-$ yarn start ```
+```
+$ yarn install  
+$ yarn start
+```
