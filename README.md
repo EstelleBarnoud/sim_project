@@ -43,7 +43,7 @@ Project example
 
 ![ScreenShot](client/src/images/screenshot.png)
 
-## Further link to the project
+## Further links to the project material
 
 - <a href="https://docs.google.com/presentation/d/1RnNAvNjzGh6oQ6-sDAstRj-NMiArkv8BeuRtYWgJE_4/edit?usp=sharing" >Final presentation in French</a>
 - <a href=https://docs.google.com/forms/d/1qLYRHjs99r8n0OHpfjbfPpZexUtsFIgPEA9OIuwmUKI/edit >Survey</a>
