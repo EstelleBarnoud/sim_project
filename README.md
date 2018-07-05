@@ -31,3 +31,15 @@ The back-end is still under development, but you can test the front-end platform
 $ yarn install  
 $ yarn start
 ```
+
+
+## Overview
+
+![ScreenShot](client/src/image/Screenshot-2018-6-27 Idées Citoyennes.jpg?raw=true)
+
+
+## Further link to the project
+
+- <a href=https://docs.google.com/presentation/d/1RnNAvNjzGh6oQ6-sDAstRj-NMiArkv8BeuRtYWgJE_4/edit#slide=id.g3cadb88b88_0_70 >Final presentation in French</a>
+- <a href=https://docs.google.com/forms/d/1qLYRHjs99r8n0OHpfjbfPpZexUtsFIgPEA9OIuwmUKI/edit >Survey</a>
+- <a href=https://drive.google.com/open?id=1Z6-e9mCT18oWGGfKnCjfpraoIkVS1PxV >Code of the v0</a>
